@@ -1,0 +1,38 @@
+/*
+ *= require main
+ */
+@charset "utf-8";
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: 'Lato';
+  color: rgba(50, 50, 50);
+  font-size: 32px;
+  letter-spacing: -1px;
+  padding: 350px 0 10px;
+  margin: 0;
+  width: auto
+}
+
+.title-header {
+  font-family: 'Lato';
+  position: absolute;
+  bottom: 25%;
+  left: 20%;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  width: 75%;
+}
+
+.description {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 48%
+}
+
