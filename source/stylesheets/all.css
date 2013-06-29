@@ -7,15 +7,6 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-family: 'Lato';
-  color: rgba(50, 50, 50);
-  font-size: 32px;
-  padding: 350px 0 10px;
-  margin: 0;
-  width: auto
-}
-
 .title-header {
   font-family: 'Lato';
   position: absolute;
@@ -24,7 +15,16 @@ h1 {
   margin-top: 35px;
   margin-bottom: 30px;
   width: 75%;
-  font-size: 0.93em
+  font-size: 0.93em;
+
+  h1 {
+    font-family: 'Lato';
+    color: rgba(50, 50, 50);
+    font-size: 32px;
+    padding: 350px 0 10px;
+    margin: 0;
+    width: auto;
+  }
 }
 
 .description {
@@ -33,6 +33,6 @@ h1 {
   float: left;
   margin: 0;
   padding: 0;
-  width: 48%
+  width: 48%;
 }
 

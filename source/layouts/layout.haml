@@ -13,6 +13,18 @@
     = stylesheet_link_tag "normalize", "all"
     = javascript_include_tag  "all"
   
+    %link{ href: 'http://fonts.googleapis.com/css?family=Lato:300', rel: 'stylesheet', typer: 'text/css' }
   %body{ class: page_classes }
-
+    .nav-header
+      %h1 Joanne Cheng
+      %div.description
+        web and creative developer
+      %nav
+        %ul.header-links
+          %li projects
+          %li experiments
+          %li blog
+          %li talks
+          %li
+            %a{ href: 'about.html'} about
     = yield
