@@ -75,4 +75,5 @@ activate :relative_assets
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.after_build = true
+  deploy.branch = 'master'
 end
