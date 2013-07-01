@@ -72,7 +72,7 @@ configure :build do
 end
 
 activate :relative_assets
-set :relative_links, true
 activate :deploy do |deploy|
   deploy.method = :git
+  deploy.after_build = true
 end
