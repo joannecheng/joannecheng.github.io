@@ -13,7 +13,6 @@ class Interaction
     dH = $(document).height()
 
     start = wH/dH
-    console.log start
     # domain defines breaks as a percentage of document height
     domain = [start, 0.780, 0.880, 1.00]
     # range defines corresponding map locations (NEED TO CHANGE)
@@ -36,4 +35,4 @@ class Scroller
 
 mapObject = new MapObject
 interaction = new Interaction
-new Scroller()
+scroller = new Scroller()
