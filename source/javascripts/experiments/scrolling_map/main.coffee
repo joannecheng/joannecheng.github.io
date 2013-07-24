@@ -9,7 +9,7 @@ class Interaction
     # window.innerHeight is viewport height
     wH = window.innerHeight
     bY = tY + (wH/2)
-    # full document height. subtract 200 for the header
+    # full document height
     dH = $(document).height()
 
     start = wH/dH
@@ -21,9 +21,7 @@ class Interaction
 
     mapObject.map.pos.domain(domain).range(range).clamp(true)
 
-    console.log "mappos " + mapObject.map.pos(bY/dH)
-
-    yOff = (wH - 3600) * mapObject.map.pos(bY/dH)
+    yOff = (window.innerHeight - 1200*3) * mapObject.map.pos(bY/dH)
 
     offsetter = d3.select('#g-map-scrolloffset')
     console.log yOff
