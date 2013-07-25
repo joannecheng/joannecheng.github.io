@@ -1,5 +1,5 @@
-lineHeight = 16
-lineSpacing = 14
+lineHeight = 22
+lineSpacing = 13
 
 sortByWins = (data) ->
   _.sortBy data, (d) ->
@@ -46,12 +46,14 @@ d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
     .data(sortByPayroll(data)).enter()
     .append('line')
     .attr('y1', (d) -> (findTeamPosition(d, data) - 0.3) * lineHeight + lineSpacing)
-    .attr('x1', 245)
-    .attr('x2', 495)
+    .attr('x1', 246)
+    .attr('x2', 493)
     .attr('y2', (d, i) -> (i - 0.3) * lineHeight + lineSpacing)
     .attr('stroke', (d, i) ->
       if i > findTeamPosition(d, data)
-        'blue'
+        '#3030F0'
       else
-        'red'
+        '#F03030'
     )
+    .attr('stroke-width', (d, i) -> Math.abs(i - findTeamPosition(d, data))/3)
+    .attr('stroke-linecap', 'round')
