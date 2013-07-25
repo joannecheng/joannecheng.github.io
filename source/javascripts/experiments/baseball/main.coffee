@@ -1,5 +1,5 @@
-lineHeight = 14
-lineSpacing = 3
+lineHeight = 16
+lineSpacing = 14
 
 sortByWins = (data) ->
   _.sortBy data, (d) ->
@@ -22,7 +22,7 @@ d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
     .data(sortByWins(data)).enter()
     .append('text')
     .attr('x', 10)
-    .attr('y', (d, i) -> (i + 1) * lineHeight + lineSpacing)
+    .attr('y', (d, i) -> i * lineHeight + lineSpacing)
     .text((d) -> d.teamname )
     .classed('team-name')
 
@@ -30,7 +30,7 @@ d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
     .data(sortByWins(data)).enter()
     .append('text')
     .attr('x', 200)
-    .attr('y', (d, i) -> (i + 1) * lineHeight + lineSpacing)
+    .attr('y', (d, i) -> i * lineHeight + lineSpacing)
     .text((d) -> d.standing)
     .classed('standing')
 
@@ -38,17 +38,17 @@ d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
     .data(sortByPayroll(data)).enter()
     .append('text')
     .attr('x', 500)
-    .attr('y', (d, i) -> (i + 1) * lineHeight + lineSpacing)
+    .attr('y', (d, i) -> i * lineHeight + lineSpacing)
     .text((d) -> "$" + d3.format(",")(d.payroll))
     .classed('payroll')
 
   teamPayrollLine = svg.selectAll('line.payroll-line')
     .data(sortByPayroll(data)).enter()
     .append('line')
-    .attr('y1', (d) -> (findTeamPosition(d, data) + 0.5) * lineHeight + lineSpacing)
+    .attr('y1', (d) -> (findTeamPosition(d, data) - 0.3) * lineHeight + lineSpacing)
     .attr('x1', 245)
     .attr('x2', 495)
-    .attr('y2', (d, i) -> (i + 1) * lineHeight + lineSpacing)
+    .attr('y2', (d, i) -> (i - 0.3) * lineHeight + lineSpacing)
     .attr('stroke', (d, i) ->
       if i > findTeamPosition(d, data)
         'blue'
