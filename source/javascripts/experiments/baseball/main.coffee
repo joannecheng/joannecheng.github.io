@@ -14,7 +14,7 @@ findTeamPosition = (d, data) ->
     win.teamname == d.teamname
 
 d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
-  svg = d3.select('.content')
+  svg = d3.select('.baseball-chart')
     .append('svg')
     .append('g')
 
