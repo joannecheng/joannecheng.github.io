@@ -10,8 +10,8 @@ sortByPayroll = (data) ->
     -1 * parseInt d.payroll
 
 findTeamPosition = (d, data) ->
-  _.findIndex sortByWins(data), (win) ->
-    win.teamname == d.teamname
+  _.findIndex sortByWins(data), (row) ->
+    row.teamname == d.teamname
 
 d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
   svg = d3.select('.baseball-chart')
