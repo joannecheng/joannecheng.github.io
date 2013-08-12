@@ -52,6 +52,7 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 page '/index.html', :layout => false
+page '/experiments/live_coding/index.html', :layout => false
 
 # Build-specific configuration
 configure :build do
