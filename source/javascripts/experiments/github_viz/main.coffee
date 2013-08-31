@@ -1,19 +1,18 @@
-d3.csv '/experiments/github_viz/data.json', (error, rawData) ->
-  insertMeanIntoDatum = (datum) ->
-    if isNaN(datum.merged_at)
-      datum.merged_at = Date.parse(new Date())
-    [datum.created_at, datum.created_at + 10, datum.merged_at - 10, datum.merged_at]
+d3.csv '/experiments/github_viz/data.cvs', (error, data) ->
+  window.d = data
+  insertMeanIntoDatum = (d) ->
+    created_at = Date.parse(d.created_at)
+    closed_at = Date.parse(d.closed_at)
+    [created_at, created_at + 10, closed_at - 10, closed_at]
 
   width = 1000
   height = 400
   paddingBottom = 20
-  data = _.map rawData, (d) ->
-    { id: d.id, created_at: Date.parse(d.created_at), merged_at: Date.parse(d.merged_at) }
 
   minDate = d3.min _.pluck data, 'created_at'
-  maxDate = d3.max _.pluck(_.reject(data, (d) -> d.merged_at == 'nil'), 'merged_at')
-  xScale = d3.scale.linear().domain([minDate, Date.parse(new Date())]).range([3, width-3])
-  yScale = d3.scale.linear().domain([0, Date.parse(new Date()) - minDate]).range([275, 10])
+  maxDate = d3.max _.pluck data, 'closed_at'
+  xScale = d3.scale.linear().domain([Date.parse(minDate), Date.parse(new Date())]).range([3, width-3])
+  yScale = d3.scale.linear().domain([0, Date.parse(new Date()) - Date.parse(minDate)]).range([275, 10])
 
   svg = d3.select('.content')
     .append('svg')
