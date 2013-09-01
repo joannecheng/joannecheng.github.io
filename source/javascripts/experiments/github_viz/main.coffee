@@ -48,5 +48,5 @@ d3.csv '/experiments/github_viz/data.cvs', (error, data) ->
       .style("fill", "none")
       .style("stroke", "#000000")
       .style("stroke-width", 1)
-      .style('opacity', 0.2)
+      .style('opacity', 0.4)
       .attr('transform', "translate(0, 100)")
