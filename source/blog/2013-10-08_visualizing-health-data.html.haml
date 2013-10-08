@@ -1,0 +1,64 @@
+:markdown
+
+  Earlier this year, visualizing.org announced a contest to promote transparency in the medical field. The contest is over, but they left the data on their site. It's a fascinating dataset with over 160,000 rows with information on average total charges and medicare coverage, by treatment, for thousands of hospital in the US.
+
+  http://visualizing.org/datasets/medicare-provider-charge-data-inpatient
+
+  "The Centers for Medicare and Medicaid services released data from hospitals all over the United States showing what hospital charged and what Medicare paid for the top 100 common Medicare inpatient stays in 2011. It says on their website:
+
+  "The differences between hospital charges and Medicare payments are striking, as is the enormous variation in hospital charges across and within communities."
+
+  I decided to play around with the data in R to see if this was true. I downloaded the [inpatient data](http://visualizing.org/datasets/medicare-provider-charge-data-inpatient) and made a [box and whisker graph](https://gist.github.com/joannecheng/6870790) for each treatment, which was defined by the 'DRG Definition' column.
+  I plotted the state on the X axis and the total unpaid cost - (Average Covered Charges - Average Total Payments)*Total Discharges - on the Y axis.
+
+= image_tag 'blog/health_care_screenshot1.png', width: '95%'
+
+:markdown
+  I noticed a few things:
+
+  * The amount unpaid really did vary drastically within the same state, especially in California.
+  * There are a lot of unpaid medical costs, *averaging* to the hundreds of thousands sometimes.
+
+  I want a way to easily explore this data by treatment, so I could see the range of unpaid cost by state. My first instinct was to build website, recreating this box and whisker graph using d3. But, there's a problem:
+
+= image_tag 'blog/health_care_screenshot2.png'
+
+:markdown
+  The entire CSV file is 25MB, way too much for a user to load at once.
+
+  I tried writing a simple ruby script to pull out only the columns I needed to minify the file.
+
+<script src="https://gist.github.com/joannecheng/6887910.js"></script>
+
+:markdown
+  But that only got the file down to 14MB. At this point, it sensible to import the data into a database and serve the data using a web application.
+
+  The web framework of my choice is Rails. So I created a new rails application:
+
+  ```rails new visualizing_health_care```
+
+
+  At this point, I made a few personal configurations for my app.
+
+  * Set postgresql as the database
+  * Removed the test folder and set rspec-rails as the testing framework.
+  * Added haml and factory_girl_rails to the Gemfile
+
+  I wanted to create an API that would return list of payment information by treatment id, which was the number prefixing the name of the treatment in the first 'DRG Definition' column. I wrote an integration test for this idea.
+
+  ```
+  require 'spec_helper'
+
+  describe 'Payments API' do
+    it 'sends a list of payments given a drg id' do
+      drg = FactoryGirl.create(:drg)
+      provider = FactoryGirl.create(:provider)
+      FactoryGirl.create(:payment, drg_id: drg.id, provider_id: provider.id)
+      get '/drgs/39/payments.json'
+
+      expect(response).to be_success
+      json = JSON.parse response.body
+      expect(json['items'].length).to eq 1
+      expect(json['drg_definition']).to eq 'EXTRACRANIAL PROCEDURES W/O CC/MCC'
+    end
+  end```
