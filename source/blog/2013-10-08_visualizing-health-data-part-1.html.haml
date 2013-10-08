@@ -1,0 +1,71 @@
+:markdown
+  # Visualizing Health Data, Part 1
+
+  Earlier this year, visualizing.org announced a [contest to promote transparency in the medical field](http://visualizing.org/datasets/medicare-provider-charge-data-inpatient). 
+  The contest is over, but the data remains on the contest website. It's a fascinating dataset with over 160,000 rows with information on total charges and medicare coverage, by treatment, for thousands of hospital in the US.
+
+  The Centers for Medicare and Medicaid services opened up the data in hopes of finding patterns and inconsistencies in the world of medical billing. They state on their website:
+
+  "The differences between hospital charges and Medicare payments are striking, as is the enormous variation in hospital charges across and within communities."
+
+  I decided to play around with the data in R to see if this was true. I want to see the differences between the uncovered hospital charges (average total cost - average coveredcharges) in each state, and I want to see how generally different the cost would be for the same treatment.
+  I'm going to create a collection of [box plots](http://en.wikipedia.org/wiki/Box_plot) for each state, for every treatment in the data file. That way I can see easily the range, median, min, max, and outliers of cost for a treatment in every state.
+
+  First I need to download the [inpatient data csv file](http://visualizing.org/datasets/medicare-provider-charge-data-inpatient) from the contest website.
+  I use R to read the CSV file by passing the csv file path to ```read.csv```. The ```read.csv``` command takes a file path and several optional parameters. By default, ```read.csv``` assumes that the first row in your csv file has a header and is comma seperated, so we don't need to pass in any other options.
+
+= CodeRay.scan("inpatient <- read.csv('/path/to/Medicare_Provider_Charge_Inpatient_DRG100_FY2011.csv')", :ruby).div
+
+:markdown
+  We can saved the ```read.csv``` to a variable called 'inpatient.' ```read.csv``` returns a DataFrame, a structure used to store table data. We can view our table data by calling ```View(inpatient)```. 
+  Elements of DataFrames can be accessed directly by index, like an array, or by column names and search conditions. For instance, we can get all unique treatments ('DRG.Definition') like so:
+
+= CodeRay.scan("drgDefinitions <- unique(inpatient$DRG.Definition)", :c).div
+
+:markdown
+  Now that we have a list of all the unique treatments, we can loop through the list of treatments, gather rows with that DRG.Definition, group those rows by state, then call ```boxplot``` to create a box plot.
+
+:ruby
+  code = "
+  for(i in 1:length(drgDefinitions)) {
+    treatment <- toString(drgDefinitions[i])
+    matchingTreatmentRows <- inpatient[inpatient['DRG.Definition']==treatment,]
+    boxplot((Average.Covered.Charges - Average.Total.Payments)*Total.Discharges~Provider.State,
+        data=matchingTreatmentRows, las=2, xlab='State', ylabe'Total Payment',
+        main=treatment)
+  }"
+
+= CodeRay.scan(code, :ruby).div
+
+Example result:
+= image_tag 'blog/septicemia.png'
+-#
+  :markdown
+    A few explanations about the R code above:
+
+    ```matchingTreatmentRows <- inpatient[inpatient['DRG.Definition']==treatment,]```
+
+    * This line filters the inpatient DataFrame by returning the lines that have a DRG.Definition that matches the ```treatment``` string.
+
+  :ruby
+    code = "boxplot((Average.Covered.Charges - Average.Total.Payments)*Total.Discharges~Provider.State,
+          data=matchingTreatmentRows, las=2, xlab='State', ylab='Average Total Payment',
+          main=treatment)"
+  = CodeRay.scan(code, :ruby).div
+
+  :markdown
+    * Let's break up the input to the ```boxplot`` call.
+      ** ```(Average.Covered.Charges - Average.Total.Payments)*Total.Discharges~Provider.State``` The first argument is the x and y column names for our box plot.
+    The x is the average covered charges subtracted by the average total payments, multiplied by the total number of discharges in each row, which would give us the total amount unpaid by Medicare. The y value is the state.
+      ** ```data=matchingTreatmentRows``` This sets the data that will give us our graph.
+      ** ```xlab='State'``` Label for the x axis
+      ** ```ylab='Average Total Payment'``` Label for the y axis
+      ** ```main=treatment``` sets title for the graph to the treatment name
+
+:markdown
+  I noticed a few things while browsing through the plots. The amount unpaid really did vary drastically within the same state, especially in California.
+  There are a lot of unpaid medical costs, up to the millions in some hospitals!
+
+  I want a way to easily explore these box plots, so I could see the range of unpaid cost by state. My first instinct was to build website, recreating this box and whisker graph using d3. But, there's a problem:
+
+= image_tag 'blog/health_care_screenshot2.png'
