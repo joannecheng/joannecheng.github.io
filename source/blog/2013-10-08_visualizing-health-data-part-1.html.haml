@@ -8,8 +8,8 @@
 
   "The differences between hospital charges and Medicare payments are striking, as is the enormous variation in hospital charges across and within communities."
 
-  I decided to play around with the data in R to see if this was true. I want to see the differences between the uncovered hospital charges (average total cost - average coveredcharges) in each state, and I want to see how generally different the cost would be for the same treatment.
-  I'm going to create a collection of [box plots](http://en.wikipedia.org/wiki/Box_plot) for each state, for every treatment in the data file. That way I can see easily the range, median, min, max, and outliers of cost for a treatment in every state.
+  I want to visualize this data to see if this is true, and I want to use R to see this data. I want to see the differences between the uncovered hospital charges ((average total cost - average covered charges) * total) in each state and the differences in cost for the same treatment.
+  I'm going to create a collection of [box plots](http://en.wikipedia.org/wiki/Box_plot) in R for each state, for every treatment in the data file. Box plots clearly display the range, median, min, max, and outliers - the taller the box, the bigger the variance of cost.
 
   First I need to download the [inpatient data csv file](http://visualizing.org/datasets/medicare-provider-charge-data-inpatient) from the contest website.
   I use R to read the CSV file by passing the csv file path to ```read.csv```. The ```read.csv``` command takes a file path and several optional parameters. By default, ```read.csv``` assumes that the first row in your csv file has a header and is comma seperated, so we don't need to pass in any other options.
@@ -23,7 +23,7 @@
 = CodeRay.scan("drgDefinitions <- unique(inpatient$DRG.Definition)", :c).div
 
 :markdown
-  Now that we have a list of all the unique treatments, we can loop through the list of treatments, gather rows with that DRG.Definition, group those rows by state, then call ```boxplot``` to create a box plot.
+  Now that we have a list of all the unique treatments, we can loop through the list of treatments, gather rows with that DRG.Definition, then call [boxplot](http://stat.ethz.ch/R-manual/R-devel/library/graphics/html/boxplot.html) to create a box plot for treatment.
 
 :ruby
   code = "
@@ -66,7 +66,7 @@ Example result:
   I noticed a few things while browsing through the plots. The amount unpaid really did vary drastically within the same state, especially in California.
   There are a lot of unpaid medical costs, up to the millions in some hospitals!
 
-  I want a way to easily explore these box plots so I could look at the differences between unpaid costs of different treatments. My first instinct was to build website, recreating this box and whisker graph using d3. But, there's a problem:
+  I want a way to easily explore these box plots so I could look at the differences between unpaid costs of different treatments. I could throw together a website, recreating this box and whisker graph using d3. But, there's a problem:
 
 = image_tag 'blog/health_care_screenshot2.png'
 
