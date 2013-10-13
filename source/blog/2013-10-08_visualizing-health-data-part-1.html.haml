@@ -66,8 +66,8 @@ Example result:
   I noticed a few things while browsing through the plots. The amount unpaid really did vary drastically within the same state, especially in California.
   There are a lot of unpaid medical costs, up to the millions in some hospitals!
 
-  I want a way to easily explore these box plots so I could look at the differences between unpaid costs of different treatments. I could throw together a website, recreating this box and whisker graph using d3. But, there's a problem:
+  I want a way to easily explore these box plots so I could look at the differences between unpaid costs of different treatments. I could throw together a website, recreating these box plots with an existing javascript library. But, there's a problem:
 
 = image_tag 'blog/health_care_screenshot2.png'
 
-%p The source file is 25M, way too much for a user to load at once. The next step is to import this data into a database and build a web application on top of it.
+%p The source file is 25M, way too much for a user to load at once. We're going to need a database to store and query this data. The next step is to import this data into a database and build a web application on top of it.
