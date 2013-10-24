@@ -31,7 +31,7 @@
     treatment <- toString(drgDefinitions[i])
     matchingTreatmentRows <- inpatient[inpatient['DRG.Definition']==treatment,]
     boxplot((Average.Covered.Charges - Average.Total.Payments)*Total.Discharges~Provider.State,
-        data=matchingTreatmentRows, las=2, xlab='State', ylabe'Total Payment',
+        data=matchingTreatmentRows, las=2, xlab='State', ylab='Total Payment',
         main=treatment)
   }"
 
