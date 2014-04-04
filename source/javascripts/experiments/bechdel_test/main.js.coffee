@@ -1,7 +1,7 @@
 h = 200
 w = 400
 
-d3.json 'bechdel_test/bechdel_over_time.json', (data) ->
+d3.json '/experiments/bechdel_test/bechdel_over_time.json', (data) ->
   svg = d3.select('.content')
     .append('svg')
     .attr('height', h)
@@ -31,7 +31,6 @@ d3.json 'bechdel_test/bechdel_over_time.json', (data) ->
       while index > 0
         previousHeights += (data[index-1].percent/100) * h
         index -= 1
-      console.log previousHeights
       previousHeights
     )
     .attr('class', (d) -> "result#{d.bechdel_result} #{d.years}")
