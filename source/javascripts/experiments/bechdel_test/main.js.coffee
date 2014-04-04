@@ -45,6 +45,24 @@ d3.json '/experiments/bechdel_test/bechdel_over_time.json', (data) ->
     )
     .attr('class', (d) -> "result#{d.bechdel_result} #{d.years}")
     .classed('bar-data', true)
+    .on('mouseover', (d) ->
+      d3.select(this)
+        .classed('selected', true)
+
+      t = tooltip()
+        .xAttr('years')
+        .xLabel('Years')
+        .isTimeSeries(false)
+        .yLabel('Percent')
+        .yAttr('percent')
+
+      svg.call(t)
+    )
+    .on('mouseout', (d) ->
+      d3.selectAll('.tooltip').remove()
+      d3.select(this)
+        .classed('selected', false)
+    )
 
   sideLabels = svg.append('g')
     .classed('labels', true)
