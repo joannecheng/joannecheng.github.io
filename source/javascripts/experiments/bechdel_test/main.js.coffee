@@ -1,13 +1,23 @@
-h = 200
+h = 350
 w = 400
+
+bechdel_labels = [
+  "Fewer than two women",
+  "Women don't talk to each other",
+  "Women only talk about men",
+  "Passes"
+]
 
 d3.json '/experiments/bechdel_test/bechdel_over_time.json', (data) ->
   svg = d3.select('.content')
     .append('svg')
+
+  bars = svg
+    .append('g')
     .attr('height', h)
     .attr('width', w)
 
-  barsForYear = svg.selectAll('g.bars')
+  barsForYear = bars.selectAll('g.bars')
     .data(data)
     .enter()
     .append('g')
@@ -35,3 +45,27 @@ d3.json '/experiments/bechdel_test/bechdel_over_time.json', (data) ->
     )
     .attr('class', (d) -> "result#{d.bechdel_result} #{d.years}")
     .classed('bar-data', true)
+
+  sideLabels = svg.append('g')
+    .classed('labels', true)
+    .selectAll('text.label')
+    .data(bechdel_labels)
+    .enter()
+
+  keyForLabels = sideLabels
+    .append('rect')
+    .attr('class', (d, i) -> "result#{i}")
+    .attr('width', 10)
+    .attr('height', 10)
+    .attr('x', w + 15)
+    .attr('y', (d, i) -> i * h/4 + 4)
+
+  textForLabels = sideLabels
+    .append('foreignObject')
+    .attr('y', (d, i) -> i * h/4)
+    .attr('x', w)
+    .attr('width', 150)
+    .attr('height', 100)
+    .append('xhtml:body')
+    .html((d) -> "<div class='graph-label'>#{d}</div>")
+    .classed('label', true)
