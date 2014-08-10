@@ -11,6 +11,8 @@ bechdel_labels = [
 d3.json '/experiments/bechdel_test/bechdel_over_time.json', (data) ->
   svg = d3.select('.content')
     .append('svg')
+    .attr('height', h)
+    .attr('width', w)
 
   bars = svg
     .append('g')
