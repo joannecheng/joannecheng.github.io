@@ -1,7 +1,8 @@
-
 d3.csv 'pulitzer_newspapers/pulitzer_circulation_data.csv', (data) ->
   w = 1000
   h = 1200
+  rectSize = 6
+
   svg = d3.select('.content')
     .append('svg')
     .attr('width', w)
@@ -17,10 +18,9 @@ d3.csv 'pulitzer_newspapers/pulitzer_circulation_data.csv', (data) ->
     .enter()
     .append('rect')
     .classed('newspaper', true)
-    .attr('width', 4)
-    .attr('height', 4)
+    .attr('width', rectSize)
+    .attr('height', rectSize)
     .attr('x', 10)
-    #.text((d) -> d.Newspaper)
     .attr('y', (d) ->
       circScale parseInt(d['Daily Circulation, 2004'].replace(/,/g, ''))
     )
@@ -30,8 +30,8 @@ d3.csv 'pulitzer_newspapers/pulitzer_circulation_data.csv', (data) ->
     .enter()
     .append('rect')
     .classed('newspaper1', true)
-    .attr('width', 4)
-    .attr('height', 4)
+    .attr('width', rectSize)
+    .attr('height', rectSize)
     .attr('x', 400)
     #.text((d) -> d.Newspaper)
     .attr('y', (d) ->
@@ -54,11 +54,18 @@ d3.csv 'pulitzer_newspapers/pulitzer_circulation_data.csv', (data) ->
     .attr('stroke', (d) ->
       circ2013 = parseInt(d['Daily Circulation, 2013'].replace(/,/g, ''))
       circ2004 = parseInt(d['Daily Circulation, 2004'].replace(/,/g, ''))
-      console.log "#{circ2013} #{circ2004}"
-
-      console.log "#{circ2013 > circ2004} #{d['Newspaper']}"
       if circ2013 > circ2004
         'red'
       else
         'black'
+    )
+    .on('mouseover', (d) ->
+      selectedElem = d3.select(this.parentNode)
+      console.log selectedElem
+
+      selectedElem
+        .append('text')
+        .text(d['Newspaper'])
+        .attr('x', 400)
+        .attr('y', d3.select(this).attr('y2'))
     )

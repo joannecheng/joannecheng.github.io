@@ -1,13 +1,13 @@
 :markdown
-  The Denver department of Streets and Sidewalks releases their street closures data by [releasing a PDF](http://www.denvergov.org/StreetsandSidewalks/StreetMaintenanceandImprovement/WeeklyRoadLaneClosures/tabid/440698/Default.aspx) every two
+  The Denver department of Streets and Sidewalks releases their street closingss data by [releasing a PDF](http://www.denvergov.org/StreetsandSidewalks/StreetMaintenanceandImprovement/WeeklyRoadLaneClosures/tabid/440698/Default.aspx) every two
   weeks. They write on their website:
 
   "If looking for a particular street, hit Ctrl + F to find it within the document. It is important to note that all information on the update is subject to change based on weather conditions."
 
-  Not exactly handy for finding street closures in your neighborhood or on your commute.
+  Not exactly handy for finding street closingss in your neighborhood or on your commute.
 
-  I set out to create an API that would take each street closure in the bi-weekly PDF and turn it into a geographical object. The
-  goal was to have a queryable collection of street closures that could be easily integrated into any application.
+  I set out to create an API that would take each street closings in the bi-weekly PDF and turn it into a geographical object. The
+  goal was to have a queryable collection of street closingss that could be easily integrated into any application.
 
   I worked on a scraperwiki prototype with [Jason Lally](https://twitter.com/synchronouscity),
   former Code for Communities brigade captain and Place Matters director. After wrangling with the PDFs for a night, we decided to throw each location string into the Google Geocoding API.
@@ -19,11 +19,11 @@
 
   I kept the scraperwiki scraper and set it to run every two weeks. I wrote the API part of the project with Flask, without having
   any experience creating a Flask application and not being a very good Python developer. I chose Python because of its great support
-  for PostGIS (which I use to store and query locations of the closures) and because of its great NLTK library, which I ended up
+  for PostGIS (which I use to store and query locations of the closingss) and because of its great NLTK library, which I ended up
   not using. I approached programming in Python by learning the syntax and tackling it like I would a Ruby web project.
 
   This project is one of favorite open source projects to work on because of its challenging yet practical nature. There's still
     much work to be done on it, but I'm hoping eventually other local geo-applications will find this API useful.
 
   The source is located [here](https://github.com/colorado-code-for-communities/denver_streets).
-  The beta(alpha) of the closures API is [here](http://denverstreets.datacolorado.org/closings).
+  The beta(alpha) of the closingss API is [here](http://denverstreets.datacolorado.org/closings).
