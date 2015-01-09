@@ -16,6 +16,7 @@ findTeamPosition = (d, data) ->
 d3.csv '/experiments/baseball/2012payrollstandings.csv', (error, data) ->
   svg = d3.select('.baseball-chart')
     .append('svg')
+    .attr(width: 600, height: 900)
     .append('g')
 
   teamList = svg.selectAll('text.team-name')
