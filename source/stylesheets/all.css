@@ -1,16 +1,7 @@
 /*
  *= require main
- *= require title_page
  *= require _projects
+ *= require navigation
  */
+
 @charset "utf-8";
-
-.description {
-  display: inline-block;
-  text-align: left;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 48%;
-}
-

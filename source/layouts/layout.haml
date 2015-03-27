@@ -11,20 +11,15 @@
 
     %link{ href: 'http://fonts.googleapis.com/css?family=Lato:300', rel: 'stylesheet', type: 'text/css' }
   %body{ class: page_classes }
-    .nav-header
-      %h1 Joanne Cheng
-      %div.description
-        (mostly) web developer
-      %nav
-        %ul.header-links
-          %li
-            %a{ href: '/projects.html' } projects
-          %li
-            %a{ href: '/experiments' } experiments
-          %li blog
-          %li
-            %a{ href: '/talks.html' } talks and press
-          %li
-            %a{ href: '/about.html'} about
-    .content
-      = yield
+    %header.centered-navigation{ role: "banner" }
+      .centered-navigation-wrapper
+        %nav{ role: "navigation" }
+          %ul.centered-navigation-menu.show
+            %li.nav-link <a href="/projects.html">projects</a>
+            %li.nav-link <a href="/experiments">experiements</a>
+            %li.nav-link <a href="/talks.html">talks + press</a>
+            %li.nav-link <a href="/about.html">about</a>
+
+    .columns
+      .content
+        = yield
