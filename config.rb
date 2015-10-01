@@ -53,6 +53,11 @@ set :images_dir, 'images'
 
 page '/experiments/live_coding/index.html', :layout => false
 
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'master'
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -72,8 +77,3 @@ configure :build do
 end
 
 activate :relative_assets
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.after_build = true
-  deploy.branch = 'master'
-end
