@@ -1,0 +1,71 @@
+:css
+  .funnel {
+    font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  rect.bar {
+    fill: rgb(4, 210, 191);
+  }
+
+  div.graph-label {
+    float: left;
+  }
+
+  span.label-text {
+    font-weight: bold;
+  }
+
+  div.label-details {
+    margin-top: 1em;
+    padding-right: 1.5em;
+  }
+
+  div.count-text {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 66%;
+    font-size: 1em;
+  }
+  div.percent-change-text {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 33%;
+    color: #777;
+    font-size: 0.75em;
+  }
+
+.funnel
+  #funnels_chart
+
+= javascript_include_tag 'd3.min'
+= javascript_include_tag 'https://d26b395fwzu5fz.cloudfront.net/3.2.7/keen.min.js'
+:javascript
+  function processFunnelResult(err, response) {
+    console.log(response);
+  }
+
+  //comment out keys for now
+  const client = new Keen({
+    projectId: "",
+    readKey: ""
+  });
+
+  const funnel = new Keen.Query("funnel", {
+    steps: [
+      {
+        "event_collection": "create_user",
+        "actor_property": "user.id"
+      },
+      {
+        "event_collection": "create_organization",
+        "actor_property": "user.id"
+      },
+      {
+        "event_collection": "analysis_api_call",
+        "actor_property": "request.params.user_id"
+      }
+    ]
+  });
+
+  //client.run(funnel, processFunnelResult);
+
+= javascript_include_tag 'experiments/funnels/main'
