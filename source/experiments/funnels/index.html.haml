@@ -3,13 +3,21 @@
     font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
-  svg.funnel-graph {
-    float: left;
+  svg.funnel-graph, div.labels {
     clear: both;
   }
 
-  .labels {
-    clear: both;
+  .axis path {
+    fill: none;
+    stroke: black;
+  }
+  .axis line {
+    fill: none;
+    stroke: black;
+  }
+  .axis text {
+    font-size: 0.85em;
+    fill: black;
   }
 
   rect.bar {
@@ -24,26 +32,24 @@
     font-weight: bold;
   }
 
+  /* Bottom Labels */
   div.label-details {
     margin-top: 1em;
-    padding-right: 1.5em;
+    padding-right: 2em;
   }
-
-  div.count-text {
+  .count-text {
     display: inline-block;
     vertical-align: bottom;
     width: 66%;
     font-size: 1em;
   }
-  div.percent-change-text {
+  .percent-change-text {
     display: inline-block;
     vertical-align: bottom;
     width: 33%;
     color: #777;
     font-size: 0.75em;
   }
-
-.funnel
 
 = javascript_include_tag 'd3.min'
 = javascript_include_tag 'https://d26b395fwzu5fz.cloudfront.net/3.2.7/keen.min.js'
@@ -76,5 +82,7 @@
   });
 
   //client.run(funnel, processFunnelResult);
+
+.funnel
 
 = javascript_include_tag 'experiments/funnels/main'

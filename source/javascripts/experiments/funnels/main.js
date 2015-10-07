@@ -3,11 +3,16 @@
 // Graph
 const width = 600;
 const height = 400;
-const margin = { top: 30 };
+const margin = { top: 30, left: 40, bottom: 40, right: 30 };
+const data = [
+  { event_collection: "create_user", result: 803 },
+  { event_collection: "create_organization", result: 671 },
+  { event_collection: "analysis_api_call", result: 0 },
+];
+const graphAreaHeight = height - margin.top - margin.bottom;
+const graphAreaWidth = width - margin.left - margin.right;
 
-const graphAreaHeight = height - margin.top;
-
-// setup
+// setup DOM elements
 const topLabels = d3.select(".funnel")
   .append("div")
   .classed("labels", true)
@@ -16,7 +21,10 @@ const topLabels = d3.select(".funnel")
 const chart = d3.select(".funnel")
   .append("svg")
   .classed("funnel-graph", true)
-  .attr({width: width, height: height});
+  .attr({width: width, height: height})
+  .append("g")
+  .classed("graph", true)
+  .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
 const bottomLabels = d3.select(".funnel")
   .append("div")
@@ -24,25 +32,18 @@ const bottomLabels = d3.select(".funnel")
   .classed("bottom-labels", true);
 
 // plotting some data
-const data = [
-  { event_collection: "create_user", result: 803 },
-  { event_collection: "create_organization", result: 671 },
-  { event_collection: "analysis_api_call", result: 0 },
-]
-
-const barWidth = width / data.length / 2;
+const barWidth = graphAreaWidth / data.length / 2;
 
 const xScale = d3.scale.linear()
   .domain([0, data.length])
-  .range([0, width]);
+  .range([0, graphAreaWidth]);
 
 const yScale = d3.scale.linear()
-  .domain([0, d3.max(data, function(d) { return d.result })])
-  .range([graphAreaHeight - 2, 0]);
+  .domain([0, d3.max(data, function(d) { return d.result + d.result * 0.05 })])
+  .range([graphAreaHeight, 0]);
 
 const bars = chart.append("g")
   .classed("bars", true)
-  .attr("transform", `translate(0, ${margin.top})`)
   .selectAll("rect.bar")
   .data(data).enter()
   .append("rect")
@@ -74,26 +75,43 @@ bottomLabels.selectAll("div.bottom-label")
   .attr("class", "bottom-label graph-label")
   .style({width: width/data.length + "px"})
   .html(function(d, i) {
-    let countLabel, percentChangeLabel;
+    let countLabel = '';
+    let percentChangeLabel = '';
     if(i > 0) {
       countLabel = -1 * data[i-1].result - d.result;
       percentChangeLabel = (-100*(data[0].result - d.result) / data[0].result)
         .toFixed(2) + "%";
     }
-    else {
-      countLabel = '';
-      percentChangeLabel = '';
-    }
-    const countHtml = `<div class='count-text'>${countLabel}</div>`;
-    const percentChangeHtml = `<div class='percent-change-text'>
+    const countHtml = `<span class='count-text'>${countLabel}</span>`;
+    const percentChangeHtml = `<span class='percent-change-text'>
       ${percentChangeLabel}
-    </div>`;
+    </span>`;
 
     const label = `
       <div class="label-details">
         ${countHtml}${percentChangeHtml}
       </div>
     `
-
     return label;
   });
+
+// drawing axises
+
+const xAxis = d3.svg.axis()
+  .scale(xScale)
+  .orient("bottom");
+
+const yAxis = d3.svg.axis()
+  .scale(yScale)
+  .orient("left");
+
+chart
+  .append("g")
+  .classed("axis", true)
+  .attr("transform", `translate(0, ${graphAreaHeight})`)
+  .call(xAxis)
+
+chart
+  .append("g")
+  .classed("axis", true)
+  .call(yAxis);
