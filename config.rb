@@ -52,6 +52,7 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 page '/experiments/live_coding/index.html', :layout => false
+page '/experiments/funnels/index.html', :layout => false
 
 activate :deploy do |deploy|
   deploy.method = :git

@@ -2,6 +2,16 @@
   .funnel {
     font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
+
+  svg.funnel-graph {
+    float: left;
+    clear: both;
+  }
+
+  .labels {
+    clear: both;
+  }
+
   rect.bar {
     fill: rgb(4, 210, 191);
   }
@@ -34,7 +44,6 @@
   }
 
 .funnel
-  #funnels_chart
 
 = javascript_include_tag 'd3.min'
 = javascript_include_tag 'https://d26b395fwzu5fz.cloudfront.net/3.2.7/keen.min.js'

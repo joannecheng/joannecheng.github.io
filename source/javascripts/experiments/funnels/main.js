@@ -8,16 +8,19 @@ const margin = { top: 30 };
 const graphAreaHeight = height - margin.top;
 
 // setup
-const topLabels = d3.select("#funnels_chart")
+const topLabels = d3.select(".funnel")
   .append("div")
+  .classed("labels", true)
   .classed("top-labels", true);
 
-const chart = d3.select("#funnels_chart")
+const chart = d3.select(".funnel")
   .append("svg")
+  .classed("funnel-graph", true)
   .attr({width: width, height: height});
 
-const bottomLabels = d3.select("#funnels_chart")
+const bottomLabels = d3.select(".funnel")
   .append("div")
+  .classed("labels", true)
   .classed("bottom-labels", true);
 
 // plotting some data
@@ -52,6 +55,17 @@ const bars = chart.append("g")
   });
 
 topLabels.selectAll("div.top-label")
+  .data(data).enter()
+  .append("div")
+  .attr("class", "top-label graph-label")
+  .style({width: width/data.length + "px"})
+  .html(function(d, i) {
+    let collectionLabel = d.event_collection.replace(/_/g, " ");
+    collectionLabel = collectionLabel[0].toUpperCase() + collectionLabel.slice(1);
+    const labelHtml = `<span class='label-text'>${collectionLabel}</span>`;
+
+    return labelHtml
+  });
 
 // writing labels
 bottomLabels.selectAll("div.bottom-label")
@@ -61,9 +75,6 @@ bottomLabels.selectAll("div.bottom-label")
   .style({width: width/data.length + "px"})
   .html(function(d, i) {
     let countLabel, percentChangeLabel;
-    let collectionLabel = d.event_collection.replace(/_/g, " ");
-    collectionLabel = collectionLabel[0].toUpperCase() + collectionLabel.slice(1);
-    const labelHtml = `<span class='label-text'>${collectionLabel}</span>`;
     if(i > 0) {
       countLabel = -1 * data[i-1].result - d.result;
       percentChangeLabel = (-100*(data[0].result - d.result) / data[0].result)
@@ -79,7 +90,6 @@ bottomLabels.selectAll("div.bottom-label")
     </div>`;
 
     const label = `
-      ${labelHtml}
       <div class="label-details">
         ${countHtml}${percentChangeHtml}
       </div>
