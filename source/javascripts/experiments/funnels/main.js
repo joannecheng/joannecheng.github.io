@@ -22,10 +22,16 @@ const topLabels = d3.select(".funnel")
 const chart = d3.select(".funnel")
   .append("svg")
   .classed("funnel-graph", true)
-  .attr({width: width, height: height})
+  .attr({width: width, height: height});
+
+const axises = chart
   .append("g")
-  .classed("graph", true)
   .attr("transform", `translate(${margin.left}, ${margin.top})`)
+  .classed("axises", true);
+
+const graph = chart.append("g")
+  .classed("graph", true)
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 const bottomLabels = d3.select(".funnel")
   .append("div")
@@ -44,7 +50,7 @@ const yScale = d3.scale.linear()
   .domain([0, d3.max(data, function(d) { return d.result + d.result * 0.05 })])
   .range([graphAreaHeight, 0]);
 
-const bars = chart.append("g")
+const bars = graph.append("g")
   .classed("bars", true)
   .selectAll("rect.bar")
   .data(data).enter()
@@ -105,15 +111,18 @@ const xAxis = d3.svg.axis()
 
 const yAxis = d3.svg.axis()
   .scale(yScale)
+  .innerTickSize(-graphAreaWidth)
+  .tickPadding(10)
   .orient("left");
 
-chart
+axises
+  .append("g")
+  .classed("axis", true)
+  .call(yAxis);
+
+axises
   .append("g")
   .classed("axis", true)
   .attr("transform", `translate(0, ${graphAreaHeight})`)
   .call(xAxis)
 
-chart
-  .append("g")
-  .classed("axis", true)
-  .call(yAxis);
