@@ -3,7 +3,7 @@
 // Graph
 const width = 600;
 const height = 400;
-const margin = { top: 30, left: 40, bottom: 40, right: 30 };
+const margin = { top: 20, left: 40, bottom: 40, right: 30 };
 const data = [
   { event_collection: "create_user", result: 803 },
   { event_collection: "create_organization", result: 671 },
@@ -16,7 +16,8 @@ const graphAreaWidth = width - margin.left - margin.right;
 const topLabels = d3.select(".funnel")
   .append("div")
   .classed("labels", true)
-  .classed("top-labels", true);
+  .classed("top-labels", true)
+  .style({"margin-left": margin.left});
 
 const chart = d3.select(".funnel")
   .append("svg")
@@ -29,7 +30,8 @@ const chart = d3.select(".funnel")
 const bottomLabels = d3.select(".funnel")
   .append("div")
   .classed("labels", true)
-  .classed("bottom-labels", true);
+  .classed("bottom-labels", true)
+  .style({"margin-left": margin.left});
 
 // plotting some data
 const barWidth = graphAreaWidth / data.length / 2;
@@ -59,7 +61,7 @@ topLabels.selectAll("div.top-label")
   .data(data).enter()
   .append("div")
   .attr("class", "top-label graph-label")
-  .style({width: width/data.length + "px"})
+  .style({ width: graphAreaWidth/data.length })
   .html(function(d, i) {
     let collectionLabel = d.event_collection.replace(/_/g, " ");
     collectionLabel = collectionLabel[0].toUpperCase() + collectionLabel.slice(1);
@@ -73,7 +75,7 @@ bottomLabels.selectAll("div.bottom-label")
   .data(data).enter()
   .append("div")
   .attr("class", "bottom-label graph-label")
-  .style({width: width/data.length + "px"})
+  .style({ width: graphAreaWidth/data.length })
   .html(function(d, i) {
     let countLabel = '';
     let percentChangeLabel = '';
