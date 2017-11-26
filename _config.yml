@@ -15,3 +15,9 @@ github_username: joannecheng
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true

@@ -23,7 +23,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    1200px;
+$content-width:    980px;
 
 $on-palm:          600px;
 $on-laptop:        1200px;
@@ -51,3 +51,10 @@ $on-laptop:        1200px;
         "layout",
         "syntax-highlighting"
 ;
+
+//project page
+.project-image {
+  height: 218px;
+  width: 100%;
+  overflow: hidden;
+}
