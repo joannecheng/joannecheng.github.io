@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<h2>Keen IO Explorer</h2>
+
+<div class="f6">
+  <p>
+    The Keen IO Explorer is an interface our team built to allow customers
+    to visualize the data they stored on the Keen IO platform.
+
+    The Explorer allowed users to view the streams they created, run
+    queries, visualize data in various dimensions,
+    and manage saved/cached queries on their account.
+
+    The query's graphs also generated a embeddable JavaScript snippet
+    so users could embed the graph anywhere they want.
+
+    The application was used often by our customers,
+    as displayed in the Explorer query below.
+  </p>
+
+  <img
+     src="/assets/img/explorer/number_explorer_views.png"
+     alt="Using Explorer to display Explorer stats." />
+
+  <p>
+    Keen IO employees also used the Explorer interally on a daily basis
+    to share important engineering and customer metrics.
+  </p>
+
+  <p>
+    A major problem we dealt with during development was
+    handling of datasets with many attributes.
+    The Explorer uses
+    <a href="http://c3js.org/">C3.js</a>
+    to generate the graphs that displays Keen data.
+    Unfortunately, C3.js would cause our graph labels to
+    get cut off when there were too many sets of data to display.
+
+    Below is the solution we designed and developed to paginate our
+    legends and data when we couldn't display all groups in one graph.
+  </p>
+
+  <p>
+    The project was built with React with ES6 JavaScript, and the source code
+    is available
+    <a href="https://github.com/keen/explorer">
+    on GitHub</a>.
+  </p>
+
+</div>
+
+<div class="f7 project-description-footer">
+  Worked on JavaScript, code architecture, and UI development.
+</div>
