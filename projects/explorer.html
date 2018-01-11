@@ -40,14 +40,34 @@ layout: default
   <p>
     A major problem we dealt with during development was
     handling of datasets with many attributes.
+    For example, a "Group By" query returns results grouped by
+    a selected field. Often times, the number of unique
+    field values would be very large.
     The Explorer uses
     <a href="http://c3js.org/">C3.js</a>
     to generate the graphs that displays Keen data.
-    Unfortunately, C3.js would cause our graph labels to
-    get cut off when there were too many sets of data to display.
+    C3.js would cause our graph labels to
+    get cut off when there were too many group-by values to display.
 
     Below is the solution we designed and developed to paginate our
     legends and data when we couldn't display all groups in one graph.
+  </p>
+
+    <img
+      class="pb2"
+      src="/assets/img/explorer/paginated-metrics.png"
+      title="Using Explorer to display Explorer stats."
+      alt="Using Explorer to display Explorer stats.">
+    </img>
+
+  <p>
+    11 groups would be displayed at once, and the user would be able to
+    flip through various "pages" of groups.
+    The entire data set returned from the query is still visible on the
+    graph, but they are greyed out to avoid any confusion.
+    This allowed us to accurately display all the data returned from the
+    query, while still allowing the user to focus on the data displayed on the
+    current "page."
   </p>
 
   <p>
