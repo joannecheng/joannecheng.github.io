@@ -38,16 +38,17 @@ layout: default
   </p>
 
   <p>
-    A major problem we dealt with during development was
-    handling of datasets with many attributes.
+    Handling large results with many attributes was a problem we frequently
+    encountered in the Explorer.
     For example, a "Group By" query returns results grouped by
-    a selected field. Often times, the number of unique
+    a selected field.
+    Often times, the number of unique
     field values would be very large.
     The Explorer uses
     <a href="http://c3js.org/">C3.js</a>
     to generate the graphs that displays Keen data.
-    C3.js would cause our graph labels to
-    get cut off when there were too many group-by values to display.
+    Unforuntately, C3.js would cause our graph labels to
+    overflow when there were too many group-by values to display.
 
     Below is the solution we designed and developed to paginate our
     legends and data when we couldn't display all groups in one graph.
