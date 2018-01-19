@@ -5,27 +5,57 @@ layout: default
 <h2>Grid Map</h2>
 
 <div class="f6">
+  <p>
+    <a href="https://github.com/joannecheng/grid_map">grid-map
+    </a>
+    is a personal project that is a solution
+    for displaying a dense number of points in d3.js map visualizations.
+
+  <p>
+    I used tornado data from NOAA's
+    <a href="http://www.spc.noaa.gov/wcm/">
+      Storm Prediction Center
+    </a>
+    page and plotted all tornadoes from 2005 to 2014 using d3.js.
+    The result looked like this:
+  </p>
+
   <section class="center pt2 pb4 mw7">
     <img
       class="pb2"
       src="/assets/img/grid-map/tornadoes-aggregated-before.png"
-      title="All tornadoes from 2008-2015"
-      alt="All tornadoes from 2008-2015" />
+      title="All tornadoes from 2005-2014"
+      alt="All tornadoes from 2005-2014" />
 
     <div class="f7 i tc">
-      Displaying all tornadoes from 2008 to 2015.
+      Displaying all tornadoes from 2005 to 2014. That's a lot of points.
     </div>
   </section>
+
+  <p>
+    I used D3's <a href="https://github.com/d3/d3-quadtree">QuadTree</a> to
+    help me calculate the number of points in a "cell."
+    Based on that number,
+    I filled in that cell with the correct intensity of color (the darker the
+    cell, the more points there are in that cell).
+  </p>
 
   <section class="center pt2 pb4 mw7">
     <img
       class="pb2"
       src="/assets/img/grid-map/tornadoes-aggregated-after.png"
-      title="All tornadoes from 2008-2015"
-      alt="All tornadoes from 2008-2015" />
+      title="All tornadoes from 2005-2014"
+      alt="All tornadoes from 2005-2014" />
 
     <div class="f7 i tc">
       Using grid-map to aggregate points in an area.
     </div>
   </section>
+
+  <p>
+    You can check out the project on
+    <a href="https://github.com/joannecheng/grid_map">
+      GitHub
+    </a>.
+  </p>
 </div>
