@@ -28,7 +28,7 @@ learning process much more pleasant.
 I type and run nearly all of the code I see in books and screencasts.
 Reading through code isn’t enough for me, I find that I retain concepts much better when I get code under my fingers multiple times.
 Copying code, running it, and seeing what happens when I do something helps me solidify syntax in my brain.
-Occasionally, I'll refector the code I copied as well to help me become more fluent.
+Occasionally, I'll refactor the code I copied as well to help me become more fluent.
 
 I apply this idea when someone graciously spends time to help me learn a new language.
 When they show me a piece of code, I delete it and retype it from memory.
