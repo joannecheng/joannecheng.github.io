@@ -8,7 +8,7 @@ categories: clojure programming
 I’m currently learning Clojure.
 It's been several years since I've spent this much time learning a new language,
 especially one that's so different from the dynamic languages I've been using for work for years.
-Here's what helped me learn and stick to Clojure.
+Here's what helped me learn and stick to Clojure:
 
 
 ### Use a REPL
