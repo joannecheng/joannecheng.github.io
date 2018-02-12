@@ -49,7 +49,7 @@ The key is to find straightforward projects that are accessible enough to be fin
 
 While learning Clojure, I found myself stuck on tooling issues, environment issues, and concepts that don’t seem to make sense in my brain.
 When I find myself getting frustrated and not making progress, I set a timer for 20 minutes.
-If I made any progress, I either deal with it and move on to something new or revisit the issue when I have a clear head or can get help. 
+If I haven't made any progress, I either deal with it and move on to something new or revisit the issue when I have a clear head or can get help. 
 
 I also force myself to set a limit the amount of time I spend on tooling during my learning sessions.
 There are nearly infinite ways to improve an editor workflow, but I find spending an entire learning session on tooling makes me feel unaccomplished and less motivated the next day continue my education.
