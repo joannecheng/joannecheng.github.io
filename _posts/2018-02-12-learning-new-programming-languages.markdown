@@ -51,9 +51,9 @@ While learning Clojure, I found myself stuck on tooling issues, environment issu
 When I find myself getting frustrated and not making progress, I set a timer for 20 minutes.
 If I haven't made any progress, I either deal with it and move on to something new or revisit the issue when I have a clear head or can get help. 
 
-I also force myself to set a limit the amount of time I spend on tooling during my learning sessions.
-There are nearly infinite ways to improve an editor workflow, but I find spending an entire learning session on tooling makes me feel unaccomplished and less motivated the next day continue my education.
+I also force myself to set a limit to the amount of time I spend on tooling during my learning sessions.
+There are nearly infinite ways to improve an editor workflow, but spending an entire learning session on tooling makes me feel unaccomplished and less motivated the next day continue my education.
 Instead, I spend a little time a few times a week improving my workflow, doing things like researching new tools, learning new editor commands, or customizing my current editor configuration.
 
 In the past, I usually felt overwhelmed and frustrated when learning a new language.
-Adopting habits that work with my way of learning and tweaking my approach helped me learn Clojure effectively and sustainably. 
+Adopting habits that work with my way of learning and tweaking my approach helped me learn Clojure effectively and sustainably.
