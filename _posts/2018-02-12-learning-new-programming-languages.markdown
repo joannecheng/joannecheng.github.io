@@ -23,7 +23,7 @@ Setting up [CIDER](https://cider.readthedocs.io/en/latest/) to work with my edit
 learning process much more pleasant.
 
 
-### Copy As Much Code As You Can
+### Copy as Much Code as You Can
 
 I type and run nearly all of the code I see in books and screencasts.
 Reading through code isn’t enough for me, I find that I retain concepts much better when I get code under my fingers multiple times.
