@@ -62,7 +62,7 @@ The code above turned multiple HTML pages into a Python list. Now we can start v
 ### Visualizing
 
 I wanted to see if it was safe to travel to Hualien - were the strong earthquakes were still happening?
-To help me answer this questions,
+To help me answer this question,
 I plotted earthquakes using a scatterplot, with the X axis representing time of occurrence and Y axis representing magnitude.
 While I usually use matplotlib for visualization in Python, I chose 
 [Bokeh](https://bokeh.pydata.org/en/latest/) this time, which provides interactive chart elements
