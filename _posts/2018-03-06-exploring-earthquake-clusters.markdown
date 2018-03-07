@@ -126,7 +126,7 @@ to my figure.
 Check out [the HoverTool documentation](https://bokeh.pydata.org/en/latest/docs/user_guide/tools.html#hovertool)
 to learn more about tooltip formatting.
 
-#### p.circle
+#### fig.circle
 
 Rather than pass our `ColumnDataSource` directly to a `scatterplot` function, we call Bokeh's
 [circle](https://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html) method and pass in our
