@@ -6,10 +6,12 @@ categories: visualization programming python
 ---
 
 I'm currently traveling around Taiwan.
-Before I landed in Taipei,
-I saw reports of [numerous 5.0+ earthquakes](https://news.nationalgeographic.com/2018/02/earthquake-swarm-taiwan-experts-disagree-spd/)
-hitting the Hualien area and was concerned about traveling in that region.
-I did a bit of digging into Taiwan's open earthquake reports to find out if or when it was safe to travel to that area again.
+Before I arrived,
+I saw reports of
+[numerous 5.0+ earthquakes](https://news.nationalgeographic.com/2018/02/earthquake-swarm-taiwan-experts-disagree-spd/)
+hitting the
+[Hualien area](https://www.google.com/maps/place/Hualien+City,+Hualien+County,+Taiwan+970/@23.9943068,121.5323973,12z/data=!3m1!4b1!4m5!3m4!1s0x34689fb4359f4e3d:0x1f485403f80b7771!8m2!3d23.9910732!4d121.6111949).
+I did a bit of digging into Taiwan's open earthquake reports to figure out if it was still risky to travel in that area.
 
 ### Getting Data
 
