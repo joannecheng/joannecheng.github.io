@@ -137,13 +137,13 @@ This is handy if we want to plot some values with different shapes and/or colors
 
 ### Thoughts
 
-According to this graph, the
+According to the graph I made above, the
 [earthquake swarm](https://news.nationalgeographic.com/2018/02/earthquake-swarm-taiwan-experts-disagree-spd/)
 ended right before I landed.
-Earthquakes aren't easy to predict for scientists who are much more educated about this topic than I am.
-I wasn't expecting to predict the next large earthquake, but I wanted visualize the frequency of earthquakes to get a better understanding of the trend of their occurrences.
+I should also say that Earthquakes aren't easy to predict for scientists who are much much much much more educated about this topic than I am and this chart shouldn't be used for any life-or-death earthquake-related emergency. 
+My goal was to visualize the frequency of earthquakes to get a better understanding of the trend of their occurrences.
+It was a cool feeling to be able to see the swarm of earthquakes in the chart I made and understand how a large earthquake can trigegr a lot of these strong aftershocks.
 
-I ended up visiting Hualien county for a few days during the lantern festival and saw that many others were unconcerned about the earthquakes.
 Gathering and visualizing all this data took me a relatively short amount of time to do,
 and it felt satisfying to answer my own question using open source visualization tools that are accessible to anyone who can run Python on their machine.
 
