@@ -6,8 +6,9 @@ categories: visualization programming python
 ---
 
 I'm currently traveling around Taiwan.
-Before I landed in Taipei, I saw reports of a collection of earthquakes hitting
-the Hualien area and was concerned about traveling in that region.
+Before I landed in Taipei,
+I saw reports of [numerous 5.0+ earthquakes](https://news.nationalgeographic.com/2018/02/earthquake-swarm-taiwan-experts-disagree-spd/)
+hitting the Hualien area and was concerned about traveling in that region.
 I did a bit of digging into Taiwan's open earthquake reports to find out if or when it was safe to travel to that area again.
 
 ### Getting Data
@@ -16,8 +17,9 @@ Taiwan's earthquake data is available on Taiwan's
 [Central Weather Bureau site](https://www.cwb.gov.tw/V7e/earthquake/seismic.htm)
 by month via HTML tables. I used the 
 [Selenium Python package](https://seleniumhq.github.io/selenium/docs/api/py/index.html) 
-to get January, February, and March's tables, then used [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/),
-an XML parsing library, to extract data from the HTML tables.
+to "click" through the site and load January, February, and March's tables.
+[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/),
+an XML parsing library, let me extract data values for each earthquake from the HTML tables.
 
 ```python
 # function to extract earthquake data from HTML table row
@@ -55,15 +57,15 @@ for month in select_months:
     all_earthquakes += find_earthquakes(soup)
 ```
 
-We just turned HTML pages into a Python list. Now we can start visualizing!
+The code above turned multiple HTML pages into a Python list. Now we can start visualizing!
 
 ### Visualizing
 
-My goal was to see if it was safe in Taiwan and see if strong earthquakes were still happening.
-I decided to plot earthquakes using a scatterplot, with the X axis representing time of
-occurrence and Y axis representing magnitude.
-While I usually use matplotlib for visualization in Python, I wanted to try out
-[Bokeh](https://bokeh.pydata.org/en/latest/), which provides interactive chart elements
+I wanted to see if it was safe to travel to Hualien - were the strong earthquakes were still happening?
+To help me answer this questions,
+I plotted earthquakes using a scatterplot, with the X axis representing time of occurrence and Y axis representing magnitude.
+While I usually use matplotlib for visualization in Python, I chose 
+[Bokeh](https://bokeh.pydata.org/en/latest/) this time, which provides interactive chart elements
 out of the box.
 
 ![The chart]({{site.url}}/assets/img/posts/2018-03-07-exploring-earthquake-clusters/earthquakes-taiwan.png)
@@ -85,20 +87,24 @@ ds = ColumnDataSource({
     "desc": desc
 })
 
-hover = HoverTool(tooltips=[
+hover = HoverTool(tooltips=[ # Creating tooltip format
         ("location", "@desc"),
         ("mag", "@y")
-    ])
+    ]) 
 
+# Figure takes the title, axis definitions, size, and tooltip object
 fig = figure(title="Earthquakes in Taiwan, Jan - March 2018", x_axis_type='datetime',
              plot_width=900, plot_height=300, tools=[hover])
 fig.add_layout(Title(text="source: http://www.cwb.gov.tw/V7e/earthquake/seismic.htm", align="center"), "below")
 
+# Setting axis labels
 fig.yaxis.axis_label = "Magnitude"
 fig.xaxis.axis_label = "Date"
 
+# Drawing individual circles for each earthquake
 fig.circle("x", "y", source=ds, size=3, color="steelblue", alpha=0.7)
 
+# Showing the plot
 show(p)
 ```
 
@@ -106,10 +112,11 @@ Some things to note:
 
 #### ColumnDataSource
 
-`ColumnDataSource` is a data structure used by Bokeh that maps names to sequences (Python lists, numpy arrays, Pandas series).
-In this case, we called our "x" and "y" data `x` and `y`, respectively, and we also added another column called `desc`
-that is used for our tooltips (the `HoverTool` object).
-This data structure keeps all of the attributes to our data in one place.
+[`ColumnDataSource`](https://bokeh.pydata.org/en/latest/docs/reference/models/sources.html#bokeh.models.sources.ColumnDataSource) is a data structure used by Bokeh that maps names to sequences (Python lists, numpy arrays, Pandas series).
+In this case, we called our "x" and "y" lists in our `ColumnDataSource` object `x` and `y`, respectively, and we added another column called `desc` that contains a text description
+of each earthquake.
+The `desc` list is used for our tooltips (the `HoverTool` object).
+This structure keeps all of the attributes to our data in one place.
 
 #### Tooltips
 
@@ -125,11 +132,11 @@ Rather than pass our `ColumnDataSource` directly to a `scatterplot` function, we
 [circle](https://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html) method and pass in our
 `ColumnDataSource` with the column names of our x and y values.
 Bokeh comes with other shapes, like `square`, `diamond`, `cross`, and so on.
-This is handy if we want to plot different certain values with different shapes and colors.
+This is handy if we want to plot some values with different shapes and/or colors.
 
 ### Thoughts
 
-It turns out the
+According to this graph, the
 [earthquake swarm](https://news.nationalgeographic.com/2018/02/earthquake-swarm-taiwan-experts-disagree-spd/)
 ended right before I landed.
 Earthquakes aren't easy to predict for scientists who are much more educated about this topic than I am.
@@ -137,7 +144,7 @@ I wasn't expecting to predict the next large earthquake, but I wanted visualize 
 
 I ended up visiting Hualien county for a few days during the lantern festival and saw that many others were unconcerned about the earthquakes.
 Gathering and visualizing all this data took me a relatively short amount of time to do,
-and it felt satisfying to answer my own question using open source visualization tools I've used before.
+and it felt satisfying to answer my own question using open source visualization tools that are accessible to anyone who can run Python on their machine.
 
 I have this notebook up on
 [GitHub](https://github.com/joannecheng/notebooks/blob/master/earthquake_notebook/taiwan-earthquakes.ipynb)
