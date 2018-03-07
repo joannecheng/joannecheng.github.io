@@ -5,11 +5,37 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+
+
+      {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">{{ page.author }}</span>
+      </span>
+      {% endif %}
+
+    </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+  </div>
+
+  <div class="post-about-author">
+    <h4>
+      About the Author
+    </h4>
+
+    <p>
+      Joanne Cheng is a freelance software engineer who loves
+      playing with data.
+      <a href="mailto:chengjoanne2@gmail.com">
+        Contact her
+      </a>
+      if you'd like to work together!
+    </p>
   </div>
 
 </article>

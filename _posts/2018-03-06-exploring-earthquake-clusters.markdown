@@ -6,7 +6,7 @@ categories: visualization programming python
 ---
 
 I'm currently traveling around Taiwan.
-Right before I landed in Taipei, I saw reports of a swarm of earthquakes hitting
+Before I landed in Taipei, I saw reports of a collection of earthquakes hitting
 the Hualien area and was concerned about traveling in that region.
 I did a bit of digging into Taiwan's open earthquake reports to find out if or when it was safe to travel to that area again.
 
@@ -137,7 +137,7 @@ I wasn't expecting to predict the next large earthquake, but I wanted visualize 
 
 I ended up visiting Hualien county for a few days during the lantern festival and saw that many others were unconcerned about the earthquakes.
 Gathering and visualizing all this data took me a relatively short amount of time to do,
-$and it felt satisfying to answer my own question using open source visualization tools I've used before.
+and it felt satisfying to answer my own question using open source visualization tools I've used before.
 
 I have this notebook up on
 [GitHub](https://github.com/joannecheng/notebooks/blob/master/earthquake_notebook/taiwan-earthquakes.ipynb)
