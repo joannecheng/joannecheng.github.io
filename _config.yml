@@ -9,7 +9,7 @@
 title: Joanne Cheng
 description: Personal site and portfolio of Joanne Cheng. # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://joannecheng.me" # the base hostname & protocol for your site
+url: "http://joannecheng.me" # the base hostname & protocol for your site
 twitter_username: joannecheng
 github_username: joannecheng
 
