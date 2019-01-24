@@ -5,8 +5,6 @@ date: 2018-10-30
 categories: visualization qgis denver
 ---
 
-# Every Building in Denver
-
 I was inspired by the [Map of Every
 Building](https://www.nytimes.com/interactive/2018/10/12/us/map-of-every-building-in-the-united-states.html)
 by the NY Times this a few weeks ago and decided to use [the city of Denver's
