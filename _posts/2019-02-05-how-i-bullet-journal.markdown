@@ -5,12 +5,11 @@ date: 2019-02-05
 tags: bullet-journal organization
 ---
 
-Last year, I discovered [bullet journaling](https://bulletjournal.com) for the first time.
-Bullet journaling is a planner system developed by [Ryder Carrol](https://bulletjournal.com/).
+Last year, I discovered [bullet journaling](https://bulletjournal.com/pages/learn) for the first time.
+Bullet journaling is a planner system developed by [Ryder Carrol](https://bulletjournal.com/),
+consisting of notebook layouts and an encoding system to help a person keep track of their short and long term goals.
 If you're new to the concept, I highly recommend watching [his introduction video](https://www.youtube.com/watch?v=fm15cmYU0IM). 
-Carrol's method of bullet journaling is a method of notebook layouts and encoding tasks to help a person keep track of their short and long term goals.
-It's helped me tremendously, but this method of journaling didn't work out exactly for me.
-I want to document my method of planning and organization in case it can help someone else.
+This method of journaling didn't work out exactly for me, but after a year of experimenting, I want to share my method of planning.
 I hesitate to call this "bullet journaling" because it doesn't use much of Carrol's exact techniques, but definitely pulls in a lot influence from him and other bullet journalers online.
 
 ## "Goals"
