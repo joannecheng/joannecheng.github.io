@@ -52,8 +52,7 @@ Here are the reasons I prefer this method:
 
 I'll occasionally also play around with the design of my weekly spread.
 This gives me a bit of time every week to do a small creative thing solely for myself.
-
-I purposely do one week at a time so I can leave the rest of the notebook empty for notes and writing throughout the week.
+I create these layouts one week at a time so I can leave the rest of the notebook empty for notes and writing throughout the week.
 
 ## Monthly tracking and planning
 <center>
@@ -61,8 +60,9 @@ I purposely do one week at a time so I can leave the rest of the notebook empty 
 </center>
 <br />
 
-I've used countless habit tracking apps, and found that tracking habits using a physical tracker is the only thing that sticks. The goal of this page is to track my habits without judgment.
-I didn't have any major goals with this page, however, after tracking my habits for the last two months, I'm now finally exercising and meditating almost every day.
+I have lost interest in every habit tracker app I used in the last several years, but I've been pretty successful in tracking my habits using paper.
+The goal of the tracking page is to track habits without judgment.
+I didn't have any major habit goals when I created this page, however, after tracking my habits for the last two months, I'm now finally exercising and meditating almost every day.
 My mood tracker (the bar graph above) is completely subjective, but it helps me be more aware of my emotional state.
 If I notice I've been feeling bad for a few days in a row, I'll ask myself if I'm doing the things that help my emotional state and at least take steps to do something that makes me feel better about myself.
 
@@ -77,7 +77,7 @@ podcast](https://www.youtube.com/watch?v=qdSMbUi6Ct8&t=851s). The exercise
 requires the writer to answer three questions: "what filled me with enthusiasm
 today?", "what drained me of energy today?", and "what did I learn about myself
 today?". This type of short, focused journaling has been helping me unpack my
-thoughts and emotions, and I plan to continue creating layouts and space each
+emotions without being too ramble-y, and I plan to continue creating layouts and space each
 month for journaling exercises.
 
 ## Benefits
