@@ -18,14 +18,14 @@ in the last few years I worked many late nights, sometimes juggling multiple job
 gave jet lagged talks around the world, gave up weekends, free time, and vacation time to
 travel for conferences and mentor other developers, and pulled countless all-nighters to get it barely done.
 While there are many reasons for this behavior that are too deep to go into in this blog post, this lifestyle drove me to a low point in my life.
-I used bullet journaling to set my health as a priority.
+I used bullet journaling to set my health as a priority and improve my boundaries.
 The physical act of writing down a task and seeing it on paper next to all my other tasks for the week helps me realize how taxing saying "yes" can be
 and reminds me to ask myself if that effort is worth it.
 This has helped me set better boundaries in my life.
 
 ## One Notebook
 
-Bullet journal layouts are designed for a dedicated notebook: a
+Many bullet journal layouts are designed for a dedicated notebook: a
 table of contents, pages mapped out for months in advance, and so on.
 I prefer not to juggle several notebooks, so I keep my work notes, personal notes, informal
 sketches, and my bullet journal pages in one unruled notebook ([A5 double ring
