@@ -61,8 +61,9 @@ I create these layouts one week at a time so I can leave the rest of the noteboo
 <br />
 
 I have lost interest in every habit tracker app I used in the last several years, but I've been pretty successful in tracking my habits using paper.
-The goal of the tracking page is to track habits without judgment.
-I didn't have any major habit goals when I created this page, however, after tracking my habits for the last two months, I'm now finally exercising and meditating almost every day.
+The goal of the tracking page is to track habits without judgment,
+rather than set lofty goals for myself, I only wanted to be aware of what I was doing from day to day.
+However, after tracking my habits for the last two months, I'm now finally exercising and meditating almost every day.
 My mood tracker (the bar graph above) is completely subjective, but it helps me be more aware of my emotional state.
 If I notice I've been feeling bad for a few days in a row, I'll ask myself if I'm doing the things that help my emotional state and at least take steps to do something that makes me feel better about myself.
 
@@ -82,7 +83,7 @@ month for journaling exercises.
 
 ## Benefits
 
-While this type of life organization hasn't cured my depression or stopped all my unhealthy life choices, it's helped nudge me towards healthier habits.
+While this type of life organization hasn't stopped all my unhealthy life choices, it's helped nudge me towards healthier habits.
 A weekly spread filled with too many to-dos reminds me that it's okay to say no to people,
 writing a short journal entry helps me look at my thoughts from a different angle, and
 looking at the doodles and designs I made makes me feel good that I created something just for myself.
