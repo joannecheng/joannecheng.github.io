@@ -9,19 +9,16 @@ Last year, I discovered [bullet journaling](https://bulletjournal.com/pages/lear
 Bullet journaling is a planner system developed by [Ryder Carrol](https://bulletjournal.com/),
 consisting of notebook layouts and an encoding system to help a person keep track of their short and long term goals.
 If you're new to the concept, I highly recommend watching [his introduction video](https://www.youtube.com/watch?v=fm15cmYU0IM). 
-This method of journaling didn't work out exactly for me, but after a year of experimenting, I want to share my method of planning.
-I hesitate to call this "bullet journaling" because it doesn't use much of Carrol's exact techniques, but definitely pulls in a lot influence from him and other bullet journalers online.
+After a year of experimenting with this, I want to share my method bullet journaling.
 
 ## "Goals"
 
-As mentioned above, bullet journaling is a great way to organize long and short term goals.
-However, I've stopped setting career goals, and my only priority for the time being is to take care of my health and set better boundaries.
-In the last few years I've worked many late nights, sometimes juggling multiple jobs at once, ran meetups,
+I initially wanted to use bullet journaling to help me stay focused and productive. However,
+in the last few years I worked many late nights, sometimes juggling multiple jobs at once, ran meetups,
 gave jet lagged talks around the world, gave up weekends, free time, and vacation time to
 travel for conferences and mentor other developers, and pulled countless all-nighters to get it barely done.
-
-While there are many reasons for this behavior that are too deep to go
-into in this blog post, I realized I couldn't say no to people, and I didn't even have time figure out what I wanted in my own life.
+While there are many reasons for this behavior that are too deep to go into in this blog post, this lifestyle drove me to a low point in my life.
+I used bullet journaling to set my health as a priority.
 The physical act of writing down a task and seeing it on paper next to all my other tasks for the week helps me realize how taxing saying "yes" can be
 and reminds me to ask myself if that effort is worth it.
 This has helped me set better boundaries in my life.
