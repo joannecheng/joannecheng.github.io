@@ -18,10 +18,10 @@ in the last few years I worked many late nights, sometimes juggling multiple job
 gave jet lagged talks around the world, gave up weekends, free time, and vacation time to
 travel for conferences and mentor other developers, and pulled countless all-nighters to get it barely done.
 While there are many reasons for this behavior that are too deep to go into in this blog post, this lifestyle drove me to a low point in my life.
-I used bullet journaling to set my health as a priority and improve my boundaries.
+Bullet journaling, for me, is a way set my health as a priority and improve my boundaries rather than a productivity or goal setting tool.
 The physical act of writing down a task and seeing it on paper next to all my other tasks for the week helps me realize how taxing saying "yes" can be
 and reminds me to ask myself if that effort is worth it.
-This has helped me set better boundaries in my life.
+The journal is also used as a tool of reflection and awareness so I can change the habits that aren't working in my life.
 
 ## One Notebook
 
@@ -68,7 +68,7 @@ My mood tracker (the bar graph above) is completely subjective, but it helps me 
 If I notice I've been feeling bad for a few days in a row, I'll ask myself if I'm doing the things that help my emotional state and at least take steps to do something that makes me feel better about myself.
 
 This month I tracked 5 habits, and next month, I'll probably only track exercise and meditation.
-I learned that overwhelming oneself with new, healthy habits, isn't a good way to make them stick.
+I learned that throwing a bunch of new habits at myself isn't a good way to make them stick.
 
 ## Daily journaling
 
