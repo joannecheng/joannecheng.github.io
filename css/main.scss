@@ -57,7 +57,11 @@ $on-laptop:        1200px;
 hr.break {
   height: 1px;
   border-radius: 1px;
-  background: #ccc;
+  background: $grey-color-light;
   border: 0;
   margin: 3em 0;
+}
+
+.heading-break {
+  margin-top: 0;
 }
