@@ -29,7 +29,7 @@ to export my map to a browser-presentable [slippy
 map](https://wiki.openstreetmap.org/wiki/Slippy_Map). The QTile plugin created
 all my [map tiles](https://wiki.openstreetmap.org/wiki/Tiles) and a simple
 HTML/JavaScript snippet to view and interact with my map. The final result
-[can be seen here](https://transpose.tech/denver_buildings).
+[can be seen here](https://datacolorado.org/denver_buildings).
 
 Zooming and panning the map around led to some interesting observations about Denver:
 
@@ -58,7 +58,7 @@ cul-de-sacs, rather than the more space-efficient grid structure.
 
 This was a relatively quick weekend project that resulted in a way to let me see
 Denver in a different light. Play with [the map
-yourself](https://transpose.tech/denver_buildings) and try to find more
+yourself](https://datacolorado.org/denver_buildings) and try to find more
 interesting patterns, or dig into [Denver's Open Data
 Portal](https://www.denvergov.org/opendata) and explore Denver on your own!
 
