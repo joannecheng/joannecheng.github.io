@@ -16,7 +16,7 @@ create a map that colored different buildings based on their building type.
 
 ![]({{site.url}}/assets/img/posts/2018-10-30-every-building/every-building-denver-1.png)
 
-_[The site.](https://transpose.tech/denver_buildings)_
+_[The site.](https://datacolorado.org/denver_buildings)_
 
 The building outlines dataset has metadata on building type: residential,
 commercial, public, etc. I used
