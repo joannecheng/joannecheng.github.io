@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (4.2.9)
       i18n (~> 0.7)
@@ -218,4 +218,4 @@ DEPENDENCIES
   jekyll
 
 BUNDLED WITH
-   1.13.6
+   2.1.4
