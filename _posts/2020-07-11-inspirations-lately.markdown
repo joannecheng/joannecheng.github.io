@@ -36,10 +36,8 @@ Rahawa hiked the entire Appalachian trail in 2016.
 In her article for Outside Online and podcast interview, she talks about her hiking experience, love of nature, and the extra feelings of vulnerability as a black woman going through towns with racists pasts.
 There is also a lot interesting discussions about the outdoor community and the choice of people they use for advertising these spaces: why do National Park brochures and outdoor equipment advertisements mostly show young, white, male faces?
 
-I fell in love with hiking and exploring nature while living in Colorado.
-Moving to Berlin, I lost my love of hiking and exploring nature because of fear of my safety in East Germany and the lack of POC in the areas outside of Berlin.
-The increase in harassment because of Coronavirus only added to my fears of leaving my apartment. 
-Reading her experience inspired me to slowly start listening to the part of me that loves nature.
+I fell in love with hiking and exploring nature while living in Colorado. I lost touch with it when I moved to Berlin.
+Reading her experience inspired me to listen to the part of me that loves nature again.
 
 Related: [Robert Taylor's Backpacker interview from 2000](https://www.backpacker.com/trips/robert-taylor-a-true-trailblazer), which talks about his racist encounters while hiking the Appalachian Trail.
 
