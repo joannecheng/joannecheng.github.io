@@ -35,7 +35,7 @@ This works fine, but this way creates an extra lazy sequence after the first `fi
 
 ```clojure
 (def xform (comp (filter #(:active? %)) 
-                 (map #(str (:first %) " " (:last %))))
+                 (map #(str (:first %) " " (:last %)))))
 ```
 
 Functions like `filter` and `map` create a transducer when they are called with one argument. When they are combined using `comp`, the result is also a transducer.
@@ -50,7 +50,7 @@ In the snippet above, I composed the `filter` and `map` functions and set the re
 `transduce` takes the transducer we just created (`xform`), a function to apply on the collection (`conj`), an optional initial value (`[]`), and a collection (`users`). Transducers are flexible: if we wanted to return a string instead, we can swap out the reducing function and initial value to return what we need.
 
 ```clojure
-(transduce xf str "" users) 
+(transduce xform str "" users) 
 ;=> "John ParsonsAmanda ClarkCaroline Mills"
 ```
 
@@ -63,10 +63,22 @@ Since our original example returns the result in a collection, we can also apply
 
 
 
-I often come across similar problems in my day job as a ClojureScript/[reagent](https://reagent-project.github.io/) developer. We're given sequable data that needs to be filtered, modified, and formatted into neat React components for the user. Transducers help performance by avoiding extra iterations through the data and extra lazy sequences.
+I often come across similar problems in my day job as a ClojureScript/[reagent](https://reagent-project.github.io/) developer. We're given sequable data that needs to be filtered, modified, and formatted into neat React components for the user. Transducers can help performance by avoiding extra lazy sequences.
 
 ### Additional Reading
 
 [Transducers](https://clojure.org/reference/transducers) - From the Clojure.org reference
 
 [Transducers are Coming](https://www.cognitect.com/blog/2014/8/6/transducers-are-coming) - Rich Hickey can explain transducers and reducers better than I can
+
+
+
+### *Edits:* 
+
+June 13, 2021: 
+
+* Added a missing parenthesis to the code example
+* Transducers help performance by avoiding extra iterations through the data and extra lazy sequences. -> Transducers can help performance by avoiding extra lazy sequences. 
+
+Thank you, [Andrii](https://github.com/andriidemus)!
+
