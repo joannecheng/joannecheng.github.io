@@ -1,0 +1,11 @@
+## Personal Site
+
+### Installation
+```
+bundle install
+```
+
+### Running
+```
+bundle exec jekyll serve
+```
