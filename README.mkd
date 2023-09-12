@@ -1,5 +1,7 @@
 ## Personal Site
 
+My personal website.
+
 ### Installation
 ```
 bundle install
