@@ -5,6 +5,12 @@
 bundle install
 ```
 
+if using an M2 mac, you may need some special commands in order to install nokogiri:
+```
+bundle config build.nokogiri --use-system-libraries
+bundle install
+```
+
 ### Running
 ```
 bundle exec jekyll serve
