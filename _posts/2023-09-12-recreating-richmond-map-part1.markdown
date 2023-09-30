@@ -38,11 +38,12 @@ in the map, you can see that the redlined neighborhoods have less treecover (les
 
 <br />
 
-#### Prerequisites
+### Requirements
+#### Install
 * [QGIS](https://www.qgis.org/en/site/) (3.0+)
-* Python 3+
+* [Python 3+](https://www.python.org/)
   * [rasterio](https://rasterio.readthedocs.io/en/stable/)
-  * [geopandas](FIXME)
+  * [geopandas](https://geopandas.org/en/stable/)
 
 #### Data
 * [Neighborhood categories](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads) - Search for "Richmond" and download the "Shapefile"
@@ -51,16 +52,20 @@ in the map, you can see that the redlined neighborhoods have less treecover (les
 <p> 
 </p>
 
-### Setting up your basemap
+### Adding and Styling a basemap
 
-Open the "XYZ Tiles" dropdown in the QGIS browser.
-Add "OpenStreetMap" to your map by double clicking it or dragging it to your project layers.
+Open QGIS, and open the `XYZ Tiles` dropdown in the QGIS browser.
+Add `OpenStreetMap` to your map by double clicking it or dragging it to your project layers.
 
 <img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/02_adding_osm_layer_small.jpg" width="40%" />
 
-The NYTimes uses a black and white, washed out basemap in their map, and I wanted to style my basemap to look the same.
+The NYTimes uses a black and white, washed out basemap in their map to make sure that it doesn't distract from the data on top of it.
+We'll style ours to look similar.
+
 Double click on the `OpenStreetMap` layer and then go to the `Symbology` tab.
-I set the map to black and white by setting the Grayscale by luminosity and playing with the contrast, brightness, and gamma values to get the effect I wanted. You can set your own numbers, but here are the values I used.
+I set the map style by setting Grayscale to `By luminosity` and playing with the contrast, brightness, and gamma values to get the effect I wanted.
+You can play around and set your own numbers (especially if you understand color theory better than I do).
+Here are the values I used:
 
 <img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/03_style_osm_small.jpg" width="70%">
 
@@ -74,33 +79,34 @@ This lets me quickly go back to my map's location and zoom level while I'm worki
 
 ### Render Neighborhoods in Richmond
 
-We want to display the neighborhoods defined in the Home Owners' Loan Corporation document and highlight the redlined neighborhoods, or the neighborhoods with a "D" categorization.
-Search for "Richmond" in the [Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads) site and download the "Shapefile."
+We want to display the neighborhoods defined in the Home Owners' Loan Corporation document and highlight the redlined neighborhoods, or the neighborhoods with a `D` categorization.
+Search for "Richmond" in the [Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads) site and download the `Shapefile.`
 
-After you download the shapefile, you can add it to QGIS by dragging the zip file to the project, or using the "Layer" menu item (Layer -> Add Layer -> Add Vector Layer).
+After you download the shapefile, you can add it to QGIS by dragging the zip file to the project, or using the `Layer` menu item (Layer -> Add Layer -> Add Vector Layer).
 
 If everything worked correctly, you should see the layers rendered on your map with solid, outlined shapes like so:
 ![]({{site.url}}/assets/img/posts/2023-09-richmond-nytimes/07_added_layers_small.jpg)
 
 We want these shapes to be outlines instead of filled-in shapes, and we want the redlined neighborhoods to be outlined in red.
-Double click on the layer in the `Layers` window and click on `Symbology` on the left hand side of the `Properties` popup.
 
-Click the top dropdown where it says `Single Symbol` and change it to `Categorized.`
-We want to select the field we want to categorize on, which we do via that `value` input.
-Select the `holc_grade` field in the `value` input and then click the "Classify" button.
+* Double click on the layer in the `Layers` window and click on `Symbology` on the left hand side of the `Properties` popup.
+* Click the top dropdown where it says `Single Symbol` and change it to `Categorized.`
+* We need to select the field we want to categorize on. Using the `value` input right below that top dropdown,
+select (or type in) `holc_grade` and then click the `Classify` button.
+* Keep the `A`, `B`, `C`, and `D` categories, but delete the last uncategorized one.
 
 ![]({{site.url}}/assets/img/posts/2023-09-richmond-nytimes/08_after_selecting_categorize_and_clicking_classify_small.jpg)
 
-Style the neighborhoods by double clicking on the entry in the table and editing the settings.
+Style the categories by double clicking on the entry in the table and editing the settings.
 
 ![]({{site.url}}/assets/img/posts/2023-09-richmond-nytimes/09_styling_outline_small.jpg)
 
-You can use the "Save Symbol" button to save this outline style and apply it to the other neighborhoods to save yourself some clicks.
+You can use the `Save Symbol` button to save this outline style and apply it to the other neighborhoods to save yourself some clicks.
 
-The "D" neighborhoods are our redlined areas.
+The `D` neighborhoods are our redlined areas.
 We want these neighborhoods to be outlined in red instead of black (I used `rgb(153, 0, 18)`).
 
-You should have something that looks like this:
+Save your styles by clicking `OK`. You should have something that looks like this:
 
 ![]({{site.url}}/assets/img/posts/2023-09-richmond-nytimes/12_neighborhoods_small.jpg)
 
@@ -109,16 +115,21 @@ Next, we'll work on displaying tree cover data.
 ### Prepare Tree Cover Data
 
 The [Multi-Resolution Land Characteristics (MRLC) consortium](https://www.mrlc.gov/about) provides Tree Canopy Cover data for the continential US (CONUS) from 2011 - 2021 as raster files (`geotiff`).
-The NYTimes article uses 2016's data, so let's download that year's dataset to make sure we stay consistent.
+The NYTimes article uses data from 2016, so let's download that year's dataset to stay consistent.
 
-You might have noticed two things:
+Once you've downloaded the files, you might have noticed two things:
 * The data is for CONUS, but we just need the data for the neighborhoods defined by the shapefile we displayed in the step above.
 * This file very, very large (several GBs).
 
-I used Python to clip the raster file against the shapefile.
-There's a way to do this in QGIS itself, but I prefer Python because I can easily run this script as many times as I need to, instead of making excessive clicks on a UI.
+I used Python to clip the raster file against the shapefile we used in the previous section.
+There's a way to do this in QGIS itself, but I prefer Python because I can easily run this script as many times as I need to, instead of making repetitive clicks on a UI.
 
-Here's the script I use: make sure you have rasterio and geopandas installed, and make sure to change the file locations.
+Since this is a QGIS tutorial and not a Python tutorial, I won't go into depth of how the script works.
+You can copy it and edit it so the file locations match the files on your computer.
+Make sure you have [rasterio](https://rasterio.readthedocs.io/en/stable/)
+and
+[geopandas](https://geopandas.org/en/stable/)
+installed.
 
 ```python
 import rasterio
@@ -149,7 +160,7 @@ with rasterio.open(clipped, 'w', **out_meta) as dst:
     dst.write(out_img)
 ```
 
-You should have a new file called `clipped_treecover.tif`.
+You should have a new file called `clipped_treecover.tif` that is a lot smaller than the original treecover raster file.
 
 ### Render Tree Cover Data
 
@@ -163,8 +174,12 @@ We can make this layer look like the NYTimes version by changing a few style att
 * Select the `Singleband Pseudocolor` render type
 * Add a category and set the value to `0`. Set that category's color to have `0` opacity.
 This will get rid of the black box around our data - if we don't have any trees at a certain point, then we won't display anything.
-* Edit the categories so it looks like the following. (I used white for my `1` value, and `rgb( 49, 99, 12 )` for my value at 98, which is the max)
-* Save your style and apply it to the map.
+* Edit the categories so it looks like the following.
+I used white for my `1` value with a little opacity for style, and `rgb( 49, 99, 12 )` for my value at 98, which is the max value in my raster file.
+
+<img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/14_styling_treecover_small.jpg" width="80%" />
+
+Save your style by clicking `OK`.
 
 ### Final Result
 
@@ -172,8 +187,8 @@ Here's our final result:
 
 ![]({{site.url}}/assets/img/posts/2023-09-richmond-nytimes/final_result_layers_small.jpg)
 
-In the next post, we'll add more layers to display paved surfaces and summer temperatures, as well as adding labels.
-We'll also explore ways to share our map from QGIS to the internet.
+In future posts, I'd like to share how to add more layers to display paved surfaces, summer temperatures, and labels.
+I'd like also explore ways to share this map in the browser.
 
 ### Sources
 Robert K. Nelson, LaDale Winling, Richard Marciano, Nathan Connolly, et al., “Mapping Inequality,” _American Panorama_, ed. Robert K. Nelson and Edward L. Ayers, accessed August 12, 2023, https://dsl.richmond.edu/panorama/redlining.
