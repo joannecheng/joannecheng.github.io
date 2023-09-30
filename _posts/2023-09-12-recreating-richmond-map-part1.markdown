@@ -10,11 +10,11 @@ In 2020, the
 detailing the effects of redlining on the neighborhoods of Richmond, VA (my current city of residence).
 Redlining refers to the classification of neighborhoods that were "risky investments" by the US government.
 In the 1930s, the Home Owners' Loan Corporation, a US governement agency, assigned categories to neighborhoods to determine which were "worthy" of government-assisted home ownership programs.
-Redlined neighborhoods, places assigned a "D" category, were considered "risky investments" by the government and did not qualify for assistance.
+Redlined neighborhoods, or neighborhoods assigned a "D", were considered risky investments by the government and did not qualify for assistance.
 Most of these neighborhoods were where Black residents lived.
 
-Today, nearly a century later, these same redlined neighborhoods are a lot hotter than the not-redlined ones.
-The effects are more severe with the rising temperatures caused by climate change.
+Today, nearly a century later, these same redlined neighborhoods are feeling the effects of these categorizations in regards to climate change.
+These neighborhoods are generally a lot hotter than the not-redlined ones, and this will only get worse with the rising temperatures and unstable weather caused by climate change.
 To show the effects of redlining in Richmond, NYTimes visualized the tree cover, surface temperature, and paved areas of these neighborhoods in the article.
 I wanted to recreate the visualizations they created using open source tools and data, mostly with
 [QGIS](https://www.qgis.org/en/site/) and share the steps I used to recreate it through a series of posts.
@@ -28,9 +28,13 @@ This tutorial will be aimed at a QGIS beginner, but will assume some very basic 
 <img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/nytimes_version_small.jpg" />
 </center>
 
-The NYTimes map displays all the neighborhood assignments alongside the present day tree cover.
-More treecover means more shade, which reduces the surface temperature.
-In the map, you can see the effects of redlining today on treecover - redlined neighborhoods have less treecover (less green density) and are prone to overheating.
+We'll work on displaying the following:
+* A basemap
+* The Home Owners' Loan Corporation neighborhood classifications, highlighting the redlined neighborhoods
+* Treecover in those neighborhoods
+
+More treecover means [cooler surface temperatures](https://www.epa.gov/heatislands/using-trees-and-vegetation-reduce-heat-islands#:~:text=Trees%20and%20vegetation%20also%20provide,lower%20than%20unforested%20urban%20areas.), and
+in the map, you can see that the redlined neighborhoods have less treecover (less green density).
 
 <br />
 
