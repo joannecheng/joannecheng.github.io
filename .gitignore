@@ -1,3 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+assets/img/posts/2023-09-richmond-nytimes/.DS_Store
+assets/img/posts/.DS_Store
+assets/img/posts/2023-09-richmond-nytimes/*.png
