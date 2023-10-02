@@ -22,14 +22,14 @@ I wanted to recreate the visualizations they created using open source tools and
 
 #### The original map
 This post will guide us through creating this map in [QGIS](https://www.qgis.org/en/site/).
-This tutorial will be aimed at a QGIS beginner, but will assume some very basic knowledge about geographic file types and Python.
+This tutorial is aimed at QGIS beginners but requires basic knowledge about geographic file types and Python.
 
 <center>
 <img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/nytimes_version_small.jpg" />
 </center>
 
 We'll work on displaying the following:
-* A basemap
+* The baselayer map
 * The Home Owners' Loan Corporation neighborhood classifications, highlighting the redlined neighborhoods
 * Treecover in those neighborhoods
 
