@@ -33,8 +33,8 @@ We'll work on displaying the following:
 * The Home Owners' Loan Corporation neighborhood classifications, highlighting the redlined neighborhoods
 * Treecover in those neighborhoods
 
-More treecover means [cooler surface temperatures](https://www.epa.gov/heatislands/using-trees-and-vegetation-reduce-heat-islands#:~:text=Trees%20and%20vegetation%20also%20provide,lower%20than%20unforested%20urban%20areas.), and
-in the map, you can see that the redlined neighborhoods have less treecover (less green density).
+More treecover means [cooler surface temperatures](https://www.epa.gov/heatislands/using-trees-and-vegetation-reduce-heat-islands#:~:text=Trees%20and%20vegetation%20also%20provide,lower%20than%20unforested%20urban%20areas.).
+In the map above, you can see that the redlined neighborhoods have less treecover (less green).
 
 <br />
 
