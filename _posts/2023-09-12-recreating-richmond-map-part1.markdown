@@ -46,7 +46,7 @@ In the map above, you can see that the redlined neighborhoods have less treecove
   * [geopandas](https://geopandas.org/en/stable/)
 
 #### Data
-* [Neighborhood categories](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads) - Search for "Richmond" and download the "Shapefile"
+* [Neighborhood categories](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads) - Search for "Richmond" and download `Shapefile`
 * [Tree Cover](https://www.mrlc.gov/data?f%5B0%5D=category%3Atree%20canopy&f%5B1%5D=region%3Aconus) - Download 2016's data
 
 <p> 
@@ -54,15 +54,16 @@ In the map above, you can see that the redlined neighborhoods have less treecove
 
 ### Adding and Styling a basemap
 
-Open QGIS, and open the `XYZ Tiles` dropdown in the QGIS browser.
-Add `OpenStreetMap` to your map by double clicking it or dragging it to your project layers.
+Open QGIS, and open the `XYZ Tiles` dropdown in the [QGIS browser panel](https://www.qgistutorials.com/en/docs/using_qgis_browser.html).
+Add `OpenStreetMap` tiles to your map by double clicking it or dragging it to your project layers.
 
 <img src="{{site.url}}/assets/img/posts/2023-09-richmond-nytimes/02_adding_osm_layer_small.jpg" width="40%" />
 
 The NYTimes uses a black and white, washed out basemap in their map to make sure that it doesn't distract from the data on top of it.
 We'll style ours to look similar.
 
-Double click on the `OpenStreetMap` layer and then go to the `Symbology` tab.
+Double click on the `OpenStreetMap` layer in the [layer panel](https://www.qgistutorials.com/en/docs/using_qgis_browser.html)
+and then go to the `Symbology` tab.
 I set the map style by setting Grayscale to `By luminosity` and playing with the contrast, brightness, and gamma values to get the effect I wanted.
 You can play around and set your own numbers (especially if you understand color theory better than I do).
 Here are the values I used:
