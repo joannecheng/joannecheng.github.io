@@ -192,4 +192,5 @@ In future posts, I'd like to share how to add more layers to display paved surfa
 I'd like also explore ways to share this map in the browser.
 
 ### Sources
-Robert K. Nelson, LaDale Winling, Richard Marciano, Nathan Connolly, et al., “Mapping Inequality,” _American Panorama_, ed. Robert K. Nelson and Edward L. Ayers, accessed August 12, 2023, https://dsl.richmond.edu/panorama/redlining.
+Robert K. Nelson, LaDale Winling, Richard Marciano, Nathan Connolly, et al., “Mapping Inequality,” _American Panorama_, ed. Robert K. Nelson and Edward L. Ayers, accessed August 12, 2023,
+[https://dsl.richmond.edu/panorama/redlining](https://dsl.richmond.edu/panorama/redlining).
