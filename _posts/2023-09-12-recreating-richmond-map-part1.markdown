@@ -9,7 +9,7 @@ In 2020, the
 [New York Times released an article](https://www.nytimes.com/interactive/2020/08/24/climate/racism-redlining-cities-global-warming.html)
 detailing the effects of redlining on the neighborhoods of Richmond, VA (my current city of residence).
 Redlining refers to the classification of neighborhoods that were "risky investments" by the US government.
-In the 1930s, the Home Owners' Loan Corporation, a US governement agency, assigned categories to neighborhoods to determine which were "worthy" of government-assisted home ownership programs.
+In the 1930s, the Home Owners' Loan Corporation, a US government agency, assigned categories to neighborhoods to determine which were "worthy" of government-assisted home ownership programs.
 Redlined neighborhoods, or neighborhoods assigned a "D", were considered risky investments by the government and did not qualify for assistance.
 Most of these neighborhoods were where Black residents lived.
 
