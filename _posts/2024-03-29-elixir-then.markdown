@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Replicating Clojure cond-> in Elixir
+title: Replicating Clojure's Conditional Threading in Elixir
 date: 2024-03-29
 tags: programming elixir clojure
 ---
@@ -40,17 +40,22 @@ This passes the result of the previous function into the first argument of the n
 To handle our conditionals, [we'll use the `then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2). `then/2` takes a value and a function with that value as an argument, where we'll put our conditional logic. Combining `|>` and `then/2` will let us pipe the initial data structure through functions that can help us conditionally build our map.
 
 
-```
+```elixir
 cond1 = true
 cond2 = false
 
 result %{}
-    |> then(fn args ->
-      if cond1, do: Map.put(args, :a, 1), else: args
+  |> then(fn args ->
+    case cond1 do
+      true -> Map.put(args, :a, 1)
+      _ -> args
     end)
-    |> then(fn args ->
-      if cond2, do: Map.put(args, :b, 2), else: args
+  |> then(fn args ->
+    case cond2 do
+      true -> Map.put(args, :b, 2)
+      _ -> args
     end)
+#=> %{a: 1}
 ```
 
 In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
