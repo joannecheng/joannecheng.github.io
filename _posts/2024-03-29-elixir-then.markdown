@@ -19,7 +19,7 @@ One of my favorite functions in Clojure is `cond->`. `cond->` is useful when I n
 I recently ran into into a scenario in an Elixir project where a developer needed to conditionally build out a map to pass to another function.
 The original implementation used a `case` statement with pattern matching:
 
-```
+```elixir
 result = case {case1, case2} do
   {false, false} -> %{}
   {true, false} -> %{a: 1}
