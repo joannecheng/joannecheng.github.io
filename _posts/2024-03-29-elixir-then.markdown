@@ -49,11 +49,13 @@ result = %{}
        case cond1 do
          true -> Map.put(args, :a, 1),
 	 _ -> args
+       end
      end)
   |> then(fn args ->
        case cond1 do
          true -> Map.put(args, :b, 2),
 	 _ -> args
+       end
     end)
 #=> %{a: 1}
 ```
