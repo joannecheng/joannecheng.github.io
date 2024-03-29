@@ -44,16 +44,12 @@ To handle our conditionals, [we'll use the `then/2` macro](https://hexdocs.pm/el
 cond1 = true
 cond2 = false
 
-result %{}
+result = %{}
   |> then(fn args ->
-    case cond1 do
-      true -> Map.put(args, :a, 1)
-      _ -> args
-    end)
+       if cond1, do: Map.put(args, :a, 1), else: args
+     end)
   |> then(fn args ->
-    case cond2 do
-      true -> Map.put(args, :b, 2)
-      _ -> args
+       if cond2, do: Map.put(args, :b, 2), else: args
     end)
 #=> %{a: 1}
 ```
