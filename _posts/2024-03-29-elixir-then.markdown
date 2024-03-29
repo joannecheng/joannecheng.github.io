@@ -16,7 +16,7 @@ One of my favorite functions in Clojure is `cond->`. `cond->` is useful when I n
 ;; {:a 1}
 ```
 
-At my current job, where I write Elixir, we ran into a scenario where needed to conditionally build out a map to pass to another function.
+I recently ran into into a scenario in an Elixir project where we needed to conditionally build out a map to pass to another function.
 The original implementation used a `cond`:
 
 ```
@@ -56,3 +56,5 @@ result = %{}
 
 In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
 If the conditional isn't true, we return the value we passed in.
+
+Even though I'm no longer writing Clojure professionally, I'm still using the concepts I learned while using the language in other languages.
