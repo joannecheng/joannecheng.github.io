@@ -9,7 +9,7 @@ One of my favorite functions in Clojure is `cond->`. `cond->` is very useful whe
 ```clojure
 
 (let [case1 true
-       case2 false]
+      case2 false]
 (cond-> {}
   case1 (assoc :a 1)
   case2 (assoc :b 2))
@@ -28,8 +28,8 @@ result = case {case1, case2} do
 end
 ```
 
-While this gets us the result we're looking for, I didn't like that the reader has to think about every combination of conditionals.
-This is good enough for two conditionals, but it was possible that we needed to handle a third.
+While this gets us the result we're looking for, whoever reads/maintains this code has to think about every combination of conditionals.
+This is good enough for two conditionals, but it's possible that we needed to handle a third.
 This can become increasingly complex and susceptible to accidental errors.
 
 Instead of writing this code as a set of hardcoded rules, I wanted to represent of this as a data transformation and try to replicate the behavior of `cond->` in Elixir.
