@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Elixir `then/2`
-date: 2024-03-30
+title: Elixir's "then/2"
+date: 2024-03-29
 tags: programming elixir clojure
 ---
-Elixir then
-
 One of my favorite functions in Clojure is `cond->`. `cond->` is very useful when I need to conditionally build out a map or a list, a very common scenario.
 
 ```clojure
