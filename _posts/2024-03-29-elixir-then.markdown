@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Elixir's "then/2"
+title: Replicating Clojure cond-> in Elixir
 date: 2024-03-29
 tags: programming elixir clojure
 ---
