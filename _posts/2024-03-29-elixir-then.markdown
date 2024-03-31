@@ -57,7 +57,7 @@ end
 ```
 
 Even though we aren't saving lines of code with this approach, we're now thinking of our solution as a data transformation, rather than a pattern matching one.
-We're applying functional programming concepts by using composition to help us transform our data into the shape we want.
+We can compose a function using `|>` and `cond_then` to build out the map we want, and we do not need to know every combination of `cond1` and `cond2` values.
 By thinking this way, we can add additional conditionals or change the initial value without changing existing code.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
