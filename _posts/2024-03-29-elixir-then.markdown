@@ -36,11 +36,9 @@ Instead of writing this code as a set of hardcoded rules, I wanted to represent 
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 This passes the result of the previous function into the first argument of the next.
 
-I created a `cond_then`, a function influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2).
- `then/2` takes a value and a function with that value as an argument, where we'll put our conditional logic.
-
-This lets us use function composition to build out our desired map.
-
+I created a `cond_then` function, influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2) and Clojure's `cond->`.
+`then/2` takes a value and a function with that value as an argument, where we'll put our conditional logic.
+`cond_then` takes a value, a conditional, and a function, and works identical to `cond->`.
 
 ```elixir
 def cond_then(input, conditional, output_fn) do
