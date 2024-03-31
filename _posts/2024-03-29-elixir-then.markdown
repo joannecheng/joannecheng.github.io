@@ -16,7 +16,7 @@ One of my favorite functions in Clojure is `cond->`. `cond->` is useful when I n
 ;; {:a 1}
 ```
 
-I recently ran into into a scenario in an Elixir project where a function needed conditionally build out a map to pass to another function.
+I recently ran into into a function in an Elixir project that needed to conditionally build out a map.
 The implementation used a `case` statement with pattern matching:
 
 ```elixir
