@@ -78,10 +78,10 @@ In each of the functions we've passed to `then`, we're checking the conditional,
 If the conditional isn't true, we return the original map that passed into `then`.
 
 Even though we aren't saving any lines of code with this approach, using `|>` and `then` describes the shape of the problem more accurately than pattern matching.
-We are not running specific code for different types, we are transforming a map based on two independent boolean variables.
-This approach makes our logic more easily maintainable, we can add additional conditionals or change the initial value without changing any of the existing logic.
+Our problem here is an example where we need to transform data from one shape into another.
+This approach makes our logic more easily maintainable, we can add additional conditionals or change the initial value without changing existing case statements.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
 However, I noticed it's difficult for developers who are new to functional programming to think this way naturally, especially if the language has a flexible, forgiving syntax,
 like Elixir.
-This is just an example of how I'd translate one of my favorite patterns in Clojure to my current Elixir project.
+This is just an example of how I'd apply functional thinking to Elixir, and how I'd explain this concept to developers who are new to functional thinking.
