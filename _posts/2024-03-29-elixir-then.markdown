@@ -58,7 +58,7 @@ end
   |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
 
-Even though we aren't saving lines of code with this approach, this approach focuses on using function composition to help us transform our data into the
+Even though we aren't saving lines of code with this approach, this focuses on using function composition to help us transform our data into the
 shape we want.
 By applying functional programming concepts,
 our code becomes much more easy to maintain.
