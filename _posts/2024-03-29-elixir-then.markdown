@@ -31,7 +31,6 @@ end
 While this approach returns the result we're looking for, whoever reads/maintains this code has to think about every combination of conditionals.
 This is good enough for two conditionals, but it's possible that we'll need to handle a third.
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
-
 Instead of writing this code as a set of hardcoded rules, I wanted to represent of this as a data transformation and try to replicate the behavior of `cond->` in Elixir.
 
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
@@ -44,7 +43,7 @@ To handle our conditionals, [we'll use the `then/2` macro](https://hexdocs.pm/el
 cond1 = true
 cond2 = false
 
-result = %{}
+%{}
   |> then(fn args ->
        case cond1 do
          true -> Map.put(args, :a, 1),
@@ -58,6 +57,21 @@ result = %{}
        end
     end)
 #=> %{a: 1}
+```
+
+You can refactor out the `then` as so:
+
+```elixir
+def cond_then(input, conditional, output_fn) do
+  case conditional do
+    true -> output_fn.(input)
+    _ -> input
+  end
+end
+
+%{}
+  |> cond_then(cond1, &Map.put(&1, :a, 1))
+  |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
 
 In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
