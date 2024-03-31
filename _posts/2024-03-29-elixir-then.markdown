@@ -64,6 +64,4 @@ By thinking of this problem as a data transformation problem rather than a patte
 We can add additional conditionals or change the initial value without changing existing case statements.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
-However, I noticed that this way of thinking may not be natural for those new to functional programming, especially if the language has a flexible, forgiving syntax,
-like Elixir.
-This is just an example of how I'd apply functional thinking to Elixir, and how I'd explain this concept to developers who are new to functional thinking.
+Recognizing correct approach to a problem and when our solution calls for data transformations, pattern matching, or any other functional paradigm will help us become more efficient programmers.
