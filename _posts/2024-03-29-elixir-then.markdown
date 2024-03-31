@@ -58,10 +58,9 @@ end
   |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
 
-Even though we aren't saving lines of code with this approach, this focuses on using function composition to help us transform our data into the
-shape we want.
-By thinking of this problem as a data transformation problem rather than a pattern matching problem, our code becomes easier to maintain.
-We can add additional conditionals or change the initial value without changing existing case statements.
+Even though we aren't saving lines of code with this approach, we're now thinking of our solution as a data transformation, rather than a pattern matching one.
+We're applying functional programming concepts by using composition to help us transform our data into the shape we want.
+By thinking this way, we can add additional conditionals or change the initial value without changing existing code.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
 Recognizing correct approach to a problem and when our solution calls for data transformations, pattern matching, or any other functional paradigm will help us become more efficient programmers.
