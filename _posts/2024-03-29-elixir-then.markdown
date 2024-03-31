@@ -60,8 +60,7 @@ end
 
 Even though we aren't saving lines of code with this approach, this focuses on using function composition to help us transform our data into the
 shape we want.
-By applying functional programming concepts,
-our code becomes much more easy to maintain.
+By thinking of this problem as a data transformation problem rather than a pattern matching problem, our code becomes easier to maintain.
 We can add additional conditionals or change the initial value without changing existing case statements.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
