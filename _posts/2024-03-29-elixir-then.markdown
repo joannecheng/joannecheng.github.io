@@ -62,4 +62,4 @@ We can compose a function using `|>` and `cond_then` to build out the map we wan
 By thinking this way, we can add additional conditionals or change the initial value without changing existing code.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
-Learning about different patterns in functional programming and recognizing when to apply those solutions to problem will help us become more efficient programmers.
+Learning about different patterns in functional programming and recognizing when to apply those patterns will help us become more efficient programmers.
