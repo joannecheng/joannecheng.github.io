@@ -4,7 +4,7 @@ title: Replicating Clojure's Conditional Threading in Elixir
 date: 2024-03-29
 tags: programming elixir clojure
 ---
-One of my favorite things in Clojure is `cond->`. `cond->` is useful when I need to conditionally build out a map or a list, a very common scenario.
+One of my favorite things in [Clojure is `cond->`](https://clojuredocs.org/clojure.core/cond-%3E). `cond->` is useful when I need to conditionally build out a map or a list, a very common scenario.
 
 ```clojure
 
