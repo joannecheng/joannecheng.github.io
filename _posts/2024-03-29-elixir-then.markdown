@@ -36,39 +36,20 @@ Instead of writing this code as a set of hardcoded rules, I wanted to represent 
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 This passes the result of the previous function into the first argument of the next.
 
-To handle our conditionals, [we'll use the `then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2). `then/2` takes a value and a function with that value as an argument, where we'll put our conditional logic. Combining `|>` and `then/2` will let us pipe the initial data structure through functions that can help us conditionally build our map.
+I created a `cond_then`, a function influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2)
+ `then/2` takes a value and a function with that value as an argument, where we'll put our conditional logic.
 
+This lets us use function composition to build out our desired map.
 
-```elixir
-cond1 = true
-cond2 = false
-
-%{}
-  |> then(fn args ->
-       case cond1 do
-         true -> Map.put(args, :a, 1),
-	 _ -> args
-       end
-     end)
-  |> then(fn args ->
-       case cond1 do
-         true -> Map.put(args, :b, 2),
-	 _ -> args
-       end
-    end)
-#=> %{a: 1}
-```
-
-In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
-If the conditional isn't true, we return the original map that passed into `then`.
-
-You can refactor out the `then` as so:
 
 ```elixir
 def cond_then(input, conditional, output_fn) do
-  case conditional do
-    true -> output_fn.(input)
-    _ -> input
+  if conditional do
+    # call the function on `input` if the conditional is true
+    output_fn.(input) 
+  else
+    # return `input` unchanged if false
+    input
   end
 end
 
@@ -77,9 +58,11 @@ end
   |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
 
-Even though we aren't saving any lines of code with this approach, using `|>` and `then` describes the shape of the problem more accurately than pattern matching.
-Our problem here is an example where we need to transform data from one shape into another.
-This approach makes our logic more easily maintainable, we can add additional conditionals or change the initial value without changing existing case statements.
+Even though we aren't saving lines of code with this approach, this approach focuses on using function composition to help us transform our data into the
+shape we want.
+By applying functional programming concepts,
+our code becomes much more easy to maintain.
+We can add additional conditionals or change the initial value without changing existing case statements.
 
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
 However, I noticed that this way of thinking may not be natural for those new to functional programming, especially if the language has a flexible, forgiving syntax,
