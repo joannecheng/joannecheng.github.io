@@ -16,8 +16,8 @@ One of my favorite functions in Clojure is `cond->`. `cond->` is useful when I n
 ;; {:a 1}
 ```
 
-I recently ran into into a scenario in an Elixir project where a developer needed to conditionally build out a map to pass to another function.
-The original implementation used a `case` statement with pattern matching:
+I recently ran into into a scenario in an Elixir project where a function needed conditionally build out a map to pass to another function.
+The implementation used a `case` statement with pattern matching:
 
 ```elixir
 result = case {case1, case2} do
@@ -28,8 +28,8 @@ result = case {case1, case2} do
 end
 ```
 
-While this approach returns the result we're looking for, whoever reads/maintains this code has to think about every combination of conditionals.
-This is good enough for two conditionals, but it's possible that we'll need to handle a third.
+While this approach returns the result we're looking for, whoever reads/maintains this code will need to think about every combination of conditionals.
+This is good enough for two conditionals, but what if a third is needed? A fourth?
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
 Instead of writing this code as a set of hardcoded rules, I wanted to represent of this as a data transformation and try to replicate the behavior of `cond->` in Elixir.
 
