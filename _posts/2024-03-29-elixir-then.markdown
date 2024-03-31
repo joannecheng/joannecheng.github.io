@@ -28,11 +28,12 @@ result = case {case1, case2} do
 end
 ```
 
-While this approach returns the result we're looking for, whoever reads/maintains this code will need to think about every combination of conditionals.
-This is good enough for two conditionals, but what if a third is needed? A fourth?
+While this approach returns the result we're looking for, it doesn't accurately describe the shape of the problem at hand.
+Choosing the wrong approach leads to maintainability problems.
+What if we need to check a third conditional? A fourth?
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
-Instead of writing this code as a set of hardcoded rules, I wanted to represent of this as a data transformation and try to replicate the behavior of `cond->` in Elixir.
 
+Instead of writing this code as a set of hardcoded rules, I wanted to go with a data transformation approach to solve this problem by replicating the behavior of `cond->` in Elixir.
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 This passes the result of the previous function into the first argument of the next.
 
