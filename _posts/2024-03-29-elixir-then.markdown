@@ -59,6 +59,9 @@ cond2 = false
 #=> %{a: 1}
 ```
 
+In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
+If the conditional isn't true, we return the original map that passed into `then`.
+
 You can refactor out the `then` as so:
 
 ```elixir
@@ -73,9 +76,6 @@ end
   |> cond_then(cond1, &Map.put(&1, :a, 1))
   |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
-
-In each of the functions we've passed to `then`, we're checking the conditional, then updating the map if the conditional is true.
-If the conditional isn't true, we return the original map that passed into `then`.
 
 Even though we aren't saving any lines of code with this approach, using `|>` and `then` describes the shape of the problem more accurately than pattern matching.
 Our problem here is an example where we need to transform data from one shape into another.
