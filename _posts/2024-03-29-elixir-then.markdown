@@ -33,8 +33,7 @@ What if we need to check a third conditional? A fourth?
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
 Choosing the wrong design pattern fixes the problem in the short term, but can lead to maintainability problems.
 
-Instead of writing this as a set of hardcoded rules, I played around with a potential solution that used a data transformation approach.
-I created a `cond_then` function, influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2) and Clojure's `cond->`.
+For my proposed solution, I created a `cond_then` function, influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2) and Clojure's `cond->`.
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 `then/2` takes a value and a function with that value as an argument.
 `cond_then` takes a value, a conditional, and a function, and works identical to `cond->`.
@@ -55,8 +54,8 @@ end
   |> cond_then(cond2, &Map.put(&1, :b, 2))
 ```
 
-Even though we aren't saving lines of code with this approach, we're now thinking of our solution as a data transformation, rather than a pattern matching one.
-We can compose a function using `|>` and `cond_then` to build out the map we want, and we do not need to know every combination of `cond1` and `cond2` values.
+Even though we aren't saving lines of code with this approach, we're now thinking of our problem as a data transformation problem, rather than pattern matching one.
+We can use function composition to build a flow using `|>` and `cond_then` to build out the map we want, and we do not need to know every combination of `cond1` and `cond2` values.
 By thinking this way, we can add additional conditionals or change the initial value without changing existing code.
 
 This is just a code sketch of how I would have liked to solve this problem.
