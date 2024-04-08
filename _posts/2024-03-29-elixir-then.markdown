@@ -33,6 +33,7 @@ What if we need to check a third conditional? A fourth?
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
 Choosing the wrong design pattern fixes the problem in the short term, but can lead to maintainability problems.
 
+Instead of writing this as a set of hardcoded rules, I played around with a potential solution that used a data transformation approach.
 I created a `cond_then` function, influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2) and Clojure's `cond->`.
 Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 `then/2` takes a value and a function with that value as an argument.
