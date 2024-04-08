@@ -29,15 +29,12 @@ end
 ```
 
 While this approach returns the result we're looking for, it doesn't accurately describe the shape of the problem at hand.
-Choosing the wrong approach leads to maintainability problems.
 What if we need to check a third conditional? A fourth?
 Every new conditional will increase the complexity exponentially and will make the code susceptible to accidental errors.
-
-Instead of writing this code as a set of hardcoded rules, I wanted to go with a data transformation approach to solve this problem by replicating the behavior of `cond->` in Elixir.
-Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
-This passes the result of the previous function into the first argument of the next.
+Choosing the wrong design pattern fixes the problem in the short term, but can lead to maintainability problems.
 
 I created a `cond_then` function, influenced by the [`then/2` macro](https://hexdocs.pm/elixir/1.12.3/Kernel.html#then/2) and Clojure's `cond->`.
+Elixir has a pipe operator (`|>`) that is the Elixir equivalent to the thread first macro in clojure (->).
 `then/2` takes a value and a function with that value as an argument.
 `cond_then` takes a value, a conditional, and a function, and works identical to `cond->`.
 
@@ -61,5 +58,6 @@ Even though we aren't saving lines of code with this approach, we're now thinkin
 We can compose a function using `|>` and `cond_then` to build out the map we want, and we do not need to know every combination of `cond1` and `cond2` values.
 By thinking this way, we can add additional conditionals or change the initial value without changing existing code.
 
+This is just a code sketch of how I would have liked to solve this problem.
 Data transformations are not specific to Clojure, they're a core part of functional programming philosopy.
 Learning about different patterns in functional programming and recognizing when to apply those patterns will help us be more efficient programmers.
