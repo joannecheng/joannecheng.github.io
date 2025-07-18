@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extreme Weather Events Thoughts
+title: Researching Extreme Weather Events
 date: 2025-07-18
 tags: data visualization
 ---
