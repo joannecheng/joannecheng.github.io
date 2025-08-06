@@ -16,7 +16,8 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #4e1384;
+$highlight-color:  #a444ff;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -57,11 +58,16 @@ $on-laptop:        1200px;
 hr.break {
   height: 1px;
   border-radius: 1px;
-  background: $grey-color-light;
+  background: $text-color;
   border: 0;
   margin: 3em 0;
 }
 
 .heading-break {
   margin-top: 0;
+}
+
+span.slash {
+  color: $highlight-color;
+  font-weight: 600;
 }
