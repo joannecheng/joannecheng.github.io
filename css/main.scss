@@ -14,8 +14,8 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       #444;
+$background-color: #fbfbf5;
 $brand-color:      #4e1384;
 $highlight-color:  #a444ff;
 
@@ -58,7 +58,7 @@ $on-laptop:        1200px;
 hr.break {
   height: 1px;
   border-radius: 1px;
-  background: $text-color;
+  background: lighten($color: $text-color, $amount: 30);
   border: 0;
   margin: 3em 0;
 }
