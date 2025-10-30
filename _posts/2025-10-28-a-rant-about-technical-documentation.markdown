@@ -10,13 +10,14 @@ tags: programming
 * **Do not make assumptions about the reader's background.**
 Example: something common I see in Clojure writing is the assumption that Clojure developers all come from Java (or other object oriented languages),
 without explicitly stating that Java knowledge is a requirement.
-* like macros, metaphors can be useful but it makes your writing hard to understand when you have too many
+* **Use figurative language sparingly.**
+Like macros, metaphors can be useful but it makes your writing hard to understand when you have too many (_do you see what I did there?_)
 * **Remember: Users come to your documentation to learn.**
 If you want to be creative in your technical writing or provide a deeper explanation for your philosophies,
 perhaps consider other creative mediums (personal blogs, talks) instead of documentation.
 
-An extra rule for me:
-* Do not assume the reader is an American English speaker.
+An extra rule for me and maybe the other Americans out there:
+* **Do not assume the reader is an American English speaker.**
 
 Most programmers I know are juggling several tasks outside of programming,
 especially as we get more senior.
