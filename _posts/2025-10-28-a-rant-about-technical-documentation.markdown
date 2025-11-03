@@ -6,12 +6,11 @@ tags: programming
 ---
 
 * **Get to the point.** Use straightforward language.
-* **Show examples.** Examples communicate much better than prose
+* **Show examples.** It's more effective to use examples rather than only using prose.
 * **Do not make assumptions about the reader's background.**
-Example: something common I see in Clojure writing is the assumption that Clojure developers all come from Java (or other object oriented languages),
-without explicitly stating that Java knowledge is a requirement.
+Example: I often see Clojure writing that assumes that the reader and all Clojure developers come from Java. Not every Clojure developer is a grizzled former Java developer.
 * **Use figurative language sparingly.**
-Like macros, metaphors can be useful but it makes your writing hard to understand when you have too many (_do you see what I did there?_)
+Like macros, metaphors can be useful but it makes one's writing hard to understand when there are too many.
 * **Remember: Users come to your documentation to learn.**
 If you want to be creative in your technical writing or provide a deeper explanation for your philosophies,
 perhaps consider other creative mediums (personal blogs, talks) instead of documentation.
