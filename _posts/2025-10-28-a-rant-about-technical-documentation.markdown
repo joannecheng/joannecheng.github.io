@@ -19,7 +19,13 @@ perhaps consider other creative mediums (personal blogs, talks) instead of docum
 An extra rule for me and maybe the other Americans out there:
 * **Do not assume the reader is an American English speaker.**
 
-Most programmers I know are juggling several tasks outside of programming,
-especially as we get more senior.
+When we document a library, a programming project, technical design, or anything technical,
+our job is to communicate
+
+Most traditionally employed programmers I know are juggling several tasks outside of programming,
+especially as we get more senior in our careers.
 We're planning cycles, attending product meetings, reviewing PRs, mentoring, and trying to meet deadlines.
-When doing technical writing, a little bit of empathy for your reader goes a long way.
+
+I personally keep these rules mind whenever I write anything technical,
+like tutorials, open source documentation, or technical specifications for work.
+A little empathy for your readers goes a long way.
