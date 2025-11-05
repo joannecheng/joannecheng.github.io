@@ -8,7 +8,7 @@ tags: programming
 * **Get to the point.** Use straightforward language.
 * **Show examples.** It's more effective to use examples rather than only using prose.
 * **Use figurative language sparingly.**
-Like macros, metaphors can be useful but it makes one's writing hard to understand when there are too many.
+Like macros, metaphors can be useful, but too many can make your writing difficult to follow. (*metaphor usage intentional*)
 * **Remember: Users come to your documentation to learn.**
 If you want to be creative in your technical writing or provide a deeper explanation for your philosophies,
 perhaps consider other creative mediums (personal blogs, talks) instead of documentation.
