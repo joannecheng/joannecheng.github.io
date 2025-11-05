@@ -18,4 +18,4 @@ An extra rule for me and maybe the other Americans out there:
 * **Do not assume the reader is an American English speaker.**
 
 Whenever I write documentation, I try to imagine a frazzled employee who needs to juggle project meetings, PR reviews, mentoring, deadlines, all on top of regular programming tasks (me, essentially).
-A little empathy for readers goes a long way.
+A little empathy for your readers goes a long way.
