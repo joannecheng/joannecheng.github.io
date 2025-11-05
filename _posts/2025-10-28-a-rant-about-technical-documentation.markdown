@@ -8,8 +8,6 @@ tags: programming
 * **Get to the point.** Use straightforward language.
 * **Show examples.** It's more effective to use examples rather than only using prose.
 * **Do not make too many assumptions about the reader's background.**
-At best, making too many assumptions prevents you from communicating well.
-At worst, it's exclusionary.
 * **Use figurative language sparingly.**
 Like macros, metaphors can be useful but it makes one's writing hard to understand when there are too many.
 * **Remember: Users come to your documentation to learn.**
