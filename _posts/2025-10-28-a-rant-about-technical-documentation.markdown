@@ -19,6 +19,6 @@ An extra rule for me and maybe the other Americans out there:
 
 Whenever I write documentation, I try to imagine a frazzled employee who needs to juggle project meetings, PR reviews, mentoring, deadlines, all on top of regular programming tasks (me, essentially).
 I choose concise, direct language because often times, the reader needs to get something done
-quickly so they can cross off the other things on their endless todo task.
+quickly so they can cross off the other things on their endless todo list.
 
 When writing documentation, a little empathy for readers goes a long way.
